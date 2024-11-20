@@ -61,4 +61,3 @@ Route::group(["prefix" => "logs", "middleware" => ["auth"]], function() {
     Route::get("/data-machine-logs", ShowMachineLogsController::class) -> name('data-machine-logs');
 });
 
-
