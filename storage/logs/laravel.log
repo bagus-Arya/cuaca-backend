@@ -945,3 +945,47 @@ Did you mean one of these?
 #22 /home/vandr/project-naga/terapan-backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #23 {main}
 "} 
+[2024-11-26 13:35:33] local.ERROR: Attribute [login] does not exist. {"exception":"[object] (InvalidArgumentException(code: 0): Attribute [login] does not exist. at /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php:107)
+[stacktrace]
+#0 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1355): Illuminate\\Routing\\RouteRegistrar->attribute('login', '/login')
+#1 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Routing\\Router->__call('login', Array)
+#2 /home/vandr/project-naga/terapan-backend/routes/api.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('login', Array)
+#3 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php(35): require('/home/vandr/pro...')
+#4 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register('/home/vandr/pro...')
+#5 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Routing/Router.php(382): Illuminate\\Routing\\Router->loadRoutes('/home/vandr/pro...')
+#6 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(163): Illuminate\\Routing\\Router->group(Array, '/home/vandr/pro...')
+#7 /home/vandr/project-naga/terapan-backend/app/Providers/RouteServiceProvider.php(44): Illuminate\\Routing\\RouteRegistrar->group('/home/vandr/pro...')
+#8 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#9 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#11 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#12 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#13 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(120): Illuminate\\Container\\Container->call(Object(Closure))
+#14 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#15 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#16 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#19 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#20 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(119): Illuminate\\Container\\Container->call(Object(Closure))
+#21 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(929): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#22 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(907): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#23 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 30)
+#24 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(906): array_walk(Array, Object(Closure))
+#25 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#26 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#27 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#28 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#29 /home/vandr/project-naga/terapan-backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 
+[2024-11-26 13:38:27] local.ERROR: There are no commands defined in the "install" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"install\" namespace. at /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php:650)
+[stacktrace]
+#0 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(701): Symfony\\Component\\Console\\Application->findNamespace('install')
+#1 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find('install:api')
+#2 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /home/vandr/project-naga/terapan-backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 

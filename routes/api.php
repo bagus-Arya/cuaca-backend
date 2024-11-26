@@ -21,6 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::group(["prefix" => 'device'], function() {
-    Route::get('/', [DeviceController::class, 'getAllHistory']);
+    Route::get('/history', [DeviceController::class, 'showRainyConditions']);
     Route::post('/', [DeviceController::class, 'createLogs']);
 });
