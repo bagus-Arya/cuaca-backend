@@ -14,6 +14,20 @@ class DeviceController extends Controller
         return $logs;
     }
 
+    public function getHistoryByMachineId(Request $request, $id) {
+        $logs = DeviceLogs::where('machine_id', $id) -> orderBy('created_at', 'DESC') -> paginate(10);
+        return $logs;
+    }
+
+    public function predictOneWeek(){
+        $data = DeviceLogs::orderBy('created_at', 'DESC') -> paginate(10);
+        return $data;
+    }
+
+    public function rainHistory(){
+        // 
+    }
+
     public function createLogs(Request $request) {
         $validate = Validator::make($request -> all(), [
             "id" => "required", 
