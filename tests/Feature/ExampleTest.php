@@ -5,39 +5,52 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use App\Models\Device;
+use App\Models\DeviceLogs;
+use App\Models\User;
+use Laravel\Sanctum\Sanctum;
+use Illuminate\Support\Facades\Hash;
 
 class ExampleTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testMachine()
+    public function test_machine()
     {
-        // Create a device in the database
-        $device = Device::factory()->create([
-            'name' => 'Test Device',
-            'status' => 'active',
+        // Create a user
+        $user = User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'testuser@example.com',
+            'password' => Hash::make('password'),
+        ]);
+        
+        // Authenticate the user with Sanctum
+        Sanctum::actingAs($user, ['*']);
+
+        // Create a device and associated device logs
+        $device = Device::factory()->create();
+        DeviceLogs::factory()->create([
+            'machine_id' => $device->id
         ]);
 
-        // Send a GET request to the /api/device endpoint
-        $response = $this->get('/api/device');
-
-        // Assert that the response has a 200 status code
-        $response->assertStatus(200);
-
-        // Assert that the response structure is as expected
-        $response->assertJsonStructure([
-            'data' => [
-                '*' => [
-                    'machine_id',
-                    'suhu',
-                ],
-            ],
-        ]);
-
-        // Optionally, assert that the response contains the created device
-        $response->assertJsonFragment([
-            'name' => 'Test Device',
-            'status' => 'active',
-        ]);
+        // Make a GET request to the /api/device endpoint
+        $response = $this->getJson('/api/device');
+        
+        // Assert the response status code and structure
+        $response->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [
+                    '*' => [
+                        'id',
+                        'lat',
+                        'lng',
+                        'suhu',
+                        'kecepatan_angin',
+                        'tekanan_udara',
+                        'kelembaban',
+                        'kondisi_baik',
+                        'active'
+                    ]
+                ]
+            ]);
     }
 }

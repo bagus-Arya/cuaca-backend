@@ -989,3 +989,72 @@ Did you mean one of these?
 #5 /home/vandr/project-naga/terapan-backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #6 {main}
 "} 
+[2024-11-27 07:52:06] local.ERROR: Command "db:table" is not defined.
+
+Did you mean one of these?
+    cache:table
+    db
+    db:seed
+    db:wipe
+    notifications:table
+    queue:batches-table
+    queue:failed-table
+    queue:table
+    session:table {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:table\" is not defined.
+
+Did you mean one of these?
+    cache:table
+    db
+    db:seed
+    db:wipe
+    notifications:table
+    queue:batches-table
+    queue:failed-table
+    queue:table
+    session:table at /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php:720)
+[stacktrace]
+#0 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find('db:table')
+#1 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/vandr/project-naga/terapan-backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2024-11-27 07:52:55] local.ERROR: Command "db:show" is not defined.
+
+Did you mean one of these?
+    db
+    db:seed
+    db:wipe {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:show\" is not defined.
+
+Did you mean one of these?
+    db
+    db:seed
+    db:wipe at /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php:720)
+[stacktrace]
+#0 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find('db:show')
+#1 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/vandr/project-naga/terapan-backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2024-11-27 07:53:13] local.ERROR: Command "db:show" is not defined.
+
+Did you mean one of these?
+    db
+    db:seed
+    db:wipe {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:show\" is not defined.
+
+Did you mean one of these?
+    db
+    db:seed
+    db:wipe at /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php:720)
+[stacktrace]
+#0 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find('db:show')
+#1 /home/vandr/project-naga/terapan-backend/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/vandr/project-naga/terapan-backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/vandr/project-naga/terapan-backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
