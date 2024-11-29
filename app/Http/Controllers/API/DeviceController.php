@@ -22,110 +22,134 @@ class DeviceController extends Controller
     public function predictOneWeek()
     {
         $data = DeviceLogs::orderBy('created_at', 'DESC')->take(10)->get();
-    
+
         $suhuSum = 0;
         $kecepatanAnginSum = 0;
         $tekananUdaraSum = 0;
         $kelembabanSum = 0;
         $count = count($data);
-    
+
         foreach ($data as $log) {
             $suhuSum += $log->suhu;
             $kecepatanAnginSum += $log->kecepatan_angin;
             $tekananUdaraSum += $log->tekanan_udara;
             $kelembabanSum += $log->kelembaban;
         }
-    
+
         $averageSuhu = $count > 0 ? $suhuSum / $count : 0;
         $averageKecepatanAngin = $count > 0 ? $kecepatanAnginSum / $count : 0;
         $averageTekananUdara = $count > 0 ? $tekananUdaraSum / $count : 0;
         $averageKelembaban = $count > 0 ? $kelembabanSum / $count : 0;
-    
+
         $predictions = [];
         for ($i = 0; $i <= 7; $i++) {
             $date = now()->addDays($i)->toDateString();
+
+            if ($averageSuhu < 23 && $averageKelembaban > 1013 && $averageKecepatanAngin > 10) {
+                $condition = 'Kondisi Cuaca Buruk'; 
+            } elseif ($averageSuhu > 26 && $averageKelembaban < 93 && $averageKecepatanAngin < 10) {
+                $condition = 'Kondisi Cuaca Baik'; 
+            } else {
+                $condition = 'Kondisi Tidak Diketahui'; 
+            }
+
             $predictions[] = [
                 'date' => $date,
                 'predicted_suhu' => $averageSuhu,
                 'predicted_kecepatan_angin' => $averageKecepatanAngin,
                 'predicted_tekanan_udara' => $averageTekananUdara,
                 'predicted_kelembaban' => $averageKelembaban,
+                'condition' => $condition, // Include the condition in the prediction
             ];
         }
-    
+
         return response()->json(['data' => $predictions]);
     }
 
     public function evaluateWeatherConditions()
     {
-        $data = DeviceLogs::orderBy('created_at', 'DESC')->get();
+        $latestLog = DeviceLogs::orderBy('created_at', 'DESC')->first();
 
         $weatherConditions = [];
         $dailyData = [];
 
-        foreach ($data as $log) {
-    
-            $date = \Carbon\Carbon::parse($log->created_at)->toDateString();
+        if ($latestLog) {
+            $condition = '';
 
-            if (!isset($dailyData[$date])) {
-                $dailyData[$date] = [
-                    'total_suhu' => 0,
-                    'total_kelembaban' => 0,
-                    'total_kecepatan_angin' => 0,
-                    'count' => 0,
-                ];
-            }
-
-            $dailyData[$date]['total_suhu'] += $log->suhu;
-            $dailyData[$date]['total_kelembaban'] += $log->kelembaban;
-            $dailyData[$date]['total_kecepatan_angin'] += $log->kecepatan_angin;
-            $dailyData[$date]['count']++;
-
-            if ($log->suhu < 23 && $log->kelembaban > 1013 && $log->kecepatan_angin > 10) {
+            if ($latestLog->suhu < 23 && $latestLog->kelembaban > 1013 && $latestLog->kecepatan_angin > 10) {
                 $condition = 'Kondisi Cuaca Buruk'; 
-            } elseif ($log->suhu > 26 && $log->kelembaban < 93 && $log->kecepatan_angin < 10) {
+            } elseif ($latestLog->suhu > 26 && $latestLog->kelembaban < 93 && $latestLog->kecepatan_angin < 10) {
                 $condition = 'Kondisi Cuaca Baik'; 
             } else {
                 $condition = 'Kondisi Tidak Diketahui'; 
             }
 
             $weatherConditions[] = [
-                'id' => $log->id,
-                'machine_id' => $log->machine_id,
-                'suhu' => $log->suhu,
-                'kelembaban' => $log->kelembaban,
-                'kecepatan_angin' => $log->kecepatan_angin,
+                'id' => $latestLog->id,
+                'machine_id' => $latestLog->machine_id,
+                'suhu' => $latestLog->suhu,
+                'kelembaban' => $latestLog->kelembaban,
+                'kecepatan_angin' => $latestLog->kecepatan_angin,
                 'condition' => $condition,
-                'created_at' => $log->created_at,
+                'created_at' => $latestLog->created_at,
             ];
+        }
+
+        $data = DeviceLogs::where('created_at', '>=', \Carbon\Carbon::now()->subWeek())->orderBy('created_at', 'DESC')->get();
+
+        $dailyData = [];
+
+        foreach ($data as $log) {
+            $date = \Carbon\Carbon::parse($log->created_at)->toDateString();
+
+            if (!isset($dailyData[$date])) {
+                $dailyData[$date] = [
+                    'total_suhu' => 0,
+                    'total_kecepatan_angin' => 0,
+                    'count' => 0,
+                ];
+            }
+
+            $dailyData[$date]['total_suhu'] += $log->suhu;
+            $dailyData[$date]['total_kecepatan_angin'] += $log->kecepatan_angin;
+            $dailyData[$date]['count']++;
+        }
+
+        $dailyAverages = [];
+        foreach ($dailyData as $values) {
+            $dailyAverages[] = [
+                'average_suhu' => $values['count'] > 0 ? $values['total_suhu'] / $values['count'] : 0,
+                'average_kecepatan_angin' => $values['count'] > 0 ? $values['total_kecepatan_angin'] / $values['count'] : 0,
+            ];
+        }
+
+        $predictedWeather = [];
+        $today = \Carbon\Carbon::now()->startOfDay();
+
+        for ($i = 1; $i <= 7; $i++) {
+            $predictedDate = $today->copy()->addDays($i);
+            $predictedWeather[] = [
+                'date' => $predictedDate->toDateString(),
+                'predicted_average_suhu' => array_sum(array_column($dailyAverages, 'average_suhu')) / count($dailyAverages),
+                'predicted_average_kecepatan_angin' => array_sum(array_column($dailyAverages, 'average_kecepatan_angin')) / count($dailyAverages),
+            ];
+        }
+
+        return response()->json([
+            'weather_conditions' => $weatherConditions,
+            'daily_averages' => $predictedWeather,
+        ]);
     }
 
-    $dailyAverages = [];
-    foreach ($dailyData as $date => $values) {
-        $dailyAverages[$date] = [
-            'average_suhu' => $values['total_suhu'] / $values['count'],
-            'average_kelembaban' => $values['total_kelembaban'] / $values['count'],
-            'average_kecepatan_angin' => $values['total_kecepatan_angin'] / $values['count'],
-        ];
-    }
-
-    return response()->json([
-        'weather_conditions' => $weatherConditions,
-        'daily_averages' => $dailyAverages,
-    ]);
-}
-
-    public function showRainyConditions()
-    {
-
-        $data = DeviceLogs::orderBy('created_at', 'DESC')->get();
+    public function showRainyConditions(Request $request) {
+        $logs = DeviceLogs::where('kelembaban', '>', 80) 
+            ->where('suhu', '<', 25)
+            ->where('kecepatan_angin', '<', 10)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
     
-
-        $rainyConditions = $data->filter(function ($log) {
-            return $log->kelembaban > 80; 
-        });
+        return response()->json($logs);
     
-        return response()->json(['rainy_conditions' => $rainyConditions]);
     }
 
     public function createLogs(Request $request) {

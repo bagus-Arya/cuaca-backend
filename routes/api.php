@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 // Public routes
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/device/store/1/Jklame)923l!@kj2k3;Lk', [DeviceController::class, 'createLogs']);
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
@@ -18,5 +19,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('device/predict', [DeviceController::class, 'predictOneWeek']);
     Route::get('device/weather/evaluate', [DeviceController::class, 'evaluateWeatherConditions']);
     Route::get('device/weather/rainy', [DeviceController::class, 'showRainyConditions']);
-    Route::post('device/logs', [DeviceController::class, 'createLogs']);
+    // Route::post('device/logs', [DeviceController::class, 'createLogs']);
 });
