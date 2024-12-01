@@ -14,6 +14,7 @@ class Device extends Model
     protected $fillable = [
         'lat',
         'lng',
+        'place_name',
         'suhu',
         'kecepatan_angin',
         'tekanan_udara',
@@ -21,4 +22,10 @@ class Device extends Model
         'kondisi_baik',
         'active'
     ];
+
+    public function deviceLogs()
+
+    {
+        return $this->hasMany(DeviceLog::class);
+    }
 }

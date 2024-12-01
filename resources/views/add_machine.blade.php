@@ -21,6 +21,10 @@
                                 <label for="lng">Longitude</label>
                                 <input type="text" name="lng" class="form-control" id="lng">
                               </div>
+                            <div class="form-group">
+                                <label for="lng">Nama Tempat</label>
+                            <input type="text" name="place_name" class="form-control" id="place_name">
+                            </div>
                             <div class="flex">
                               <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="{{ route('machine') }}" class="btn btn-danger">Batal</a>

@@ -33,6 +33,7 @@
                                 <tr>
                                     <th width="30" class="text-center">No</th>
                                     <th>Machine ID</th>
+                                    <th>Nama Tempat</th>
                                     <th>Latitude</th>
                                     <th>Longitude</th>
                                     <th>Aksi</th>
@@ -65,6 +66,10 @@
                     {
                         data: 'id',
                         name: 'id'
+                    },
+                    {
+                        data: 'place_name',
+                        name: 'place_name'
                     },
                     {
                         data: 'lat',

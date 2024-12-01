@@ -17,7 +17,7 @@ class ShowMachineController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $machine = Device::select('id', 'lat', 'lng') -> get();
+        $machine = Device::select('id', 'place_name', 'lat', 'lng') -> get();
         return DataTables::of($machine)
             ->addIndexColumn()
             ->addColumn('action', function ($d) {

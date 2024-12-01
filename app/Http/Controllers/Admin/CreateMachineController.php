@@ -20,6 +20,7 @@ class CreateMachineController extends Controller
         $validate = $request -> validate([
             "lat" => "required",
             "lng" => "required",
+            "place_name" => "required",
         ]);
 
         $validate["suhu"] = 0;

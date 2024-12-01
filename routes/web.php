@@ -40,7 +40,7 @@ Route::prefix("/login") -> group(function() {
 
 Route::group(["prefix" => "user", "middleware" => ["auth"]], function() {
     Route::get("/", HomeController::class) -> name('home');
-    Route::get("/store-user", ShowCreateUserController::class) -> name('show-store-user');
+    Route::get("/show-user", ShowCreateUserController::class) -> name('show-store-user');
     Route::post("/store-user", CreateUserController::class) -> name('store-user');
     Route::get('/user-data', ShowUserController::class) -> name('user-data');
     Route::get('/delete-user-data/{user:id}', DeleteUserController::class) -> name('delete-user-data');

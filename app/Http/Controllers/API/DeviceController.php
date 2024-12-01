@@ -155,6 +155,7 @@ class DeviceController extends Controller
     public function createLogs(Request $request) {
         $validate = Validator::make($request -> all(), [
             "id" => "required", 
+            "user_id" => "required", 
             "lat" => "required", 
             "lng" => "required", 
             "suhu" => "required", 
@@ -173,6 +174,7 @@ class DeviceController extends Controller
 
         $data = [
             "machine_id" => $request -> id,
+            "user_id" => $request -> user_id, 
             "lat" => $request -> lat, 
             "lng" => $request -> lng, 
             "suhu" => $request -> suhu, 
