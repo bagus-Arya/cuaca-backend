@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignLogsUsersFields extends Migration
+class AddUserDevicesFields extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,19 @@ class AddForeignLogsUsersFields extends Migration
      */
     public function up()
     {
-        Schema::table('device_logs', function (Blueprint $table) {
+        Schema::create('user_devices', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('device_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users');
+            $table->foreign('device_id')
+            ->references('id')
+            ->on('devices');
+            $table->softDeletes();
+            $table->timestamps();
+
         });
     }
 
@@ -28,8 +36,6 @@ class AddForeignLogsUsersFields extends Migration
      */
     public function down()
     {
-        Schema::table('device_logs', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-        });
+        Schema::dropIfExists('device_logs');
     }
 }

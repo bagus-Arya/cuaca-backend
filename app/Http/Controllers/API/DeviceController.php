@@ -4,6 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\DeviceLogs;
+use App\Models\UserDevices;
+use App\Models\Device;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -17,6 +20,112 @@ class DeviceController extends Controller
     public function getHistoryByMachineId(Request $request, $id) {
         $logs = DeviceLogs::where('machine_id', $id) -> orderBy('created_at', 'DESC') -> paginate(10);
         return $logs;
+    }
+
+    public function getUserDevices(Request $request, $userId) {
+        $selectedDevices = UserDevices::with('device')->where('user_id', $userId)->get();
+        return response()->json($selectedDevices);
+    }
+
+    public function predictThreeDays()
+    {
+        $data = DeviceLogs::orderBy('created_at', 'DESC')->take(10)->get();
+
+        $suhuData = [];
+        $kecepatanAnginData = [];
+        $tekananUdaraData = [];
+        $kelembabanData = [];
+
+        foreach ($data as $log) {
+            $suhuData[] = $log->suhu;
+            $kecepatanAnginData[] = $log->kecepatan_angin;
+            $tekananUdaraData[] = $log->tekanan_udara;
+            $kelembabanData[] = $log->kelembaban;
+        }
+
+        $averageSuhu = array_sum($suhuData) / count($suhuData);
+        $averageKecepatanAngin = array_sum($kecepatanAnginData) / count($kecepatanAnginData);
+        $averageTekananUdara = array_sum($tekananUdaraData) / count($tekananUdaraData);
+        $averageKelembaban = array_sum($kelembabanData) / count($kelembabanData);
+
+        $predictions = [];
+        $alpha = 0.3; // Smoothing factor
+
+        // Suhu predictions
+        $suhuPrediction = [];
+        $suhuPrediction[0] = $averageSuhu;
+        for ($i = 1; $i < 4; $i++) {
+            if (count($suhuData) > 0) {
+                $suhuPrediction[$i] = $alpha * end($suhuData) + (1 - $alpha) * ($suhuPrediction[$i - 1]);
+            }
+        }
+        // Kecepatan Angin predictions
+        $kecepatanAnginPrediction = [];
+        $kecepatanAnginPrediction[0] = $averageKecepatanAngin;
+        for ($i = 1; $i < 4; $i++) {
+            if (count($kecepatanAnginData) > 0) {
+                $kecepatanAnginPrediction[$i] = $alpha * end($kecepatanAnginData) + (1 - $alpha) * ($kecepatanAnginPrediction[$i - 1]);
+            }
+        }
+        // Tekanan Udara predictions
+        $tekananUdaraPrediction = [];
+        $tekananUdaraPrediction[0] = $averageTekananUdara;
+        for ($i = 1; $i < 4; $i++) {
+            if (count($tekananUdaraData) > 0) {
+                $tekananUdaraPrediction[$i] = $alpha * end($tekananUdaraData) + (1 - $alpha) * ($tekananUdaraPrediction[$i - 1]);
+            }
+        }
+        // Kelembaban predictions
+        $kelembabanPrediction = [];
+        $kelembabanPrediction[0] = $averageKelembaban;
+        for ($i = 1; $i < 4; $i++) {
+            if (count($kelembabanData) > 0) {
+                $kelembabanPrediction[$i] = $alpha * end($kelembabanData) + (1 - $alpha) * ($kelembabanPrediction[$i - 1]);
+            }
+        }
+        // predictions
+        $predictions[] = [
+            'date' => now()->addDay(1)->toDateString(),
+            'predicted_suhu' => round($suhuPrediction[1], 2),
+            'predicted_kecepatan_angin' => round($kecepatanAnginPrediction[1], 2),
+            'predicted_tekanan_udara' => round($tekananUdaraPrediction[1], 2),
+            'predicted_kelembaban' => round($kelembabanPrediction[1], 2),
+        ];
+
+        $predictions[] = [
+            'date' => now()->addDay(2)->toDateString(),
+            'predicted_suhu' => round($suhuPrediction[2], 2),
+            'predicted_kecepatan_angin' => round($kecepatanAnginPrediction[2], 2),
+            'predicted_tekanan_udara' => round($tekananUdaraPrediction[2], 2),
+            'predicted_kelembaban' => round($kelembabanPrediction[2], 2),
+        ];
+
+        $predictions[] = [
+            'date' => now()->addDay(3)->toDateString(),
+            'predicted_suhu' => round($suhuPrediction[3], 2),
+            'predicted_kecepatan_angin' => round($kecepatanAnginPrediction[3], 2),
+            'predicted_tekanan_udara' => round($tekananUdaraPrediction[3], 2),
+            'predicted_kelembaban' => round($kelembabanPrediction[3], 2),
+        ];
+
+        // Condition predictions
+        for ($i = 1; $i <= 3; $i++) {
+            $date = now()->addDay($i)->toDateString();
+            if ($suhuPrediction[$i] < 23 && $kelembabanPrediction[$i] > 1013 && $kecepatanAnginPrediction[$i] > 10) {
+                $condition = 'Kondisi Cuaca Buruk'; 
+            } elseif ($suhuPrediction[$i] > 26 && $kelembabanPrediction[$i] < 93 && $kecepatanAnginPrediction[$i] < 10) {
+                $condition = 'Kondisi Cuaca Baik'; 
+            } else {
+                $condition = 'Kondisi Tidak Diketahui'; 
+            }
+
+            $predictions[] = [
+                'date' => $date,
+                'condition' => $condition,
+            ];
+        }
+
+        return response()->json(['data' => $predictions]);
     }
 
     public function predictOneWeek()
@@ -154,8 +263,7 @@ class DeviceController extends Controller
 
     public function createLogs(Request $request) {
         $validate = Validator::make($request -> all(), [
-            "id" => "required", 
-            "user_id" => "required", 
+            "id" => "required",  
             "lat" => "required", 
             "lng" => "required", 
             "suhu" => "required", 
@@ -174,7 +282,6 @@ class DeviceController extends Controller
 
         $data = [
             "machine_id" => $request -> id,
-            "user_id" => $request -> user_id, 
             "lat" => $request -> lat, 
             "lng" => $request -> lng, 
             "suhu" => $request -> suhu, 

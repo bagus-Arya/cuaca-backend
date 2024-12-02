@@ -23,8 +23,12 @@ class Device extends Model
         'active'
     ];
 
-    public function deviceLogs()
+    public function userDevices()
+    {
+        return $this->hasMany(userDevices::class);
+    }
 
+    public function deviceLogs()
     {
         return $this->hasMany(DeviceLog::class);
     }

@@ -12,12 +12,6 @@ class DeviceLogs extends Model
     protected $guarded = ['id'];
 
     public function device() {
-        return $this -> belongsTo(Device::class, 'machine_id');
-    }
-
-    public function user()
-
-    {
-        return $this->belongsTo(User::class);
+        return $this -> belongsTo(Device::class);
     }
 }

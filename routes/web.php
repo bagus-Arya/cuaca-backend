@@ -18,6 +18,9 @@ use App\Http\Controllers\Admin\ShowEditMachineController;
 use App\Http\Controllers\Admin\ShowMachineController;
 use App\Http\Controllers\Admin\ShowMachineLogsController;
 use App\Http\Controllers\Admin\ShowUserController;
+use App\Http\Controllers\Admin\CreateUserDeviceController;
+use App\Http\Controllers\ShowEditUserController;
+use App\Http\Controllers\Admin\EditUserController;
 use App\Http\Controllers\API\MachineLogController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,7 +44,10 @@ Route::prefix("/login") -> group(function() {
 Route::group(["prefix" => "user", "middleware" => ["auth"]], function() {
     Route::get("/", HomeController::class) -> name('home');
     Route::get("/show-user", ShowCreateUserController::class) -> name('show-store-user');
+    Route::get("/edit/{user:id}", ShowEditUserController::class) -> name('show-edit-user');
+    Route::put("/edit/{user:id}", EditUserController::class) -> name('edit-user');
     Route::post("/store-user", CreateUserController::class) -> name('store-user');
+    Route::post("/store-user-device", CreateUserDeviceController::class) -> name('store-user-device');
     Route::get('/user-data', ShowUserController::class) -> name('user-data');
     Route::get('/delete-user-data/{user:id}', DeleteUserController::class) -> name('delete-user-data');
 });

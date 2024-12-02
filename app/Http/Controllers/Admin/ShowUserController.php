@@ -21,7 +21,9 @@ class ShowUserController extends Controller
         return DataTables::of($user)
             ->addIndexColumn()
             ->addColumn('action', function ($d) {
-                return '<a href='.route('delete-user-data', ["user" => $d -> id]).' onclick="return confirm("Yakin ingin menghapus data?")" style="cursor:pointer;" id='.$d -> id.' class="btn btn-s btn-outline-danger hapusKomponen"><i class="fa fa-trash"></i> </a>';
+                return 
+                '<a href="'.route('show-edit-user', ["user" => $d -> id]).'" id='. $d -> id.'style="cursor:pointer;" class="btn btn-xs btn-outline-warning editKomponen"><i class="fa fa-pencil"></i> </a>
+                <a href='.route('delete-user-data', ["user" => $d -> id]).' onclick="return confirm("Yakin ingin menghapus data?")" style="cursor:pointer;" id='.$d -> id.' class="btn btn-xs btn-outline-danger hapusKomponen"><i class="fa fa-trash"></i> </a>';
             })
             ->rawColumns(['action'])
             ->make(true);
