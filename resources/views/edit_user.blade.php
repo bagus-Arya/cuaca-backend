@@ -23,10 +23,6 @@
                             <label for="lng">Email</label>
                             <input value="{{ $singleUser ->email }}" type="email" name="email" class="form-control" id="email">
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password">
-                        </div>
                         <div class="flex">
                             <button type="submit" class="btn btn-primary">Edit</button>
                             <a href="{{ route('home') }}" class="btn btn-danger">Batal</a>

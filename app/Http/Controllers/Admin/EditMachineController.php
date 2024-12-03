@@ -19,6 +19,7 @@ class EditMachineController extends Controller
         $validate = $request -> validate([
             "lat" => "required",
             "lng" => "required",
+            "place_name" => "required",
         ]);
 
         Device::where('id', $machine -> id) -> update($validate);
