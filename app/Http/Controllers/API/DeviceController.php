@@ -17,14 +17,33 @@ class DeviceController extends Controller
         return $logs;
     }
 
-    public function getHistoryByMachineId(Request $request, $id) {
-        $logs = DeviceLogs::where('machine_id', $id) -> orderBy('created_at', 'DESC') -> paginate(10);
+    public function getHistoryByMachineId(Request $request, $id, $userId) {
+        $logs = UserDevices::with(['device','user'])
+                        ->where('device_id', $id)
+                        ->where('user_id', $userId)
+                        ->orderBy('created_at', 'DESC')
+                        ->paginate(10);
+            
         return $logs;
     }
 
-    public function getUserDevices(Request $request, $userId) {
-        $selectedDevices = UserDevices::with('device')->where('user_id', $userId)->get();
-        return response()->json($selectedDevices);
+    public function getUserDevices(Request $request, $userId, $machineId) {
+        $logs = UserDevices::with(['device','user'])
+                        ->where('device_id', $machineId)
+                        ->where('user_id', $userId)
+                        ->orderBy('created_at', 'DESC')
+                        ->first();
+            
+                        if (!$logs) {
+                            return response()->json([
+                                'status' => 'offline',
+                            ], 200);
+                        }
+                        
+                        return response()->json([
+                            'status' => 'online',
+                            'data' => $logs
+                        ], 200);
     }
 
     public function predictThreeDays()

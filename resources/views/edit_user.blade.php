@@ -51,7 +51,7 @@
                                         @foreach($selectedDevice as $selectedDevices)
                                             <li class="list-group-item">
                                                 {{ $selectedDevices->device->place_name }}
-                                                <button class="btn btn-sm btn-danger float-right" onclick="#">Remove</button>
+                                                <button class="btn btn-sm btn-danger float-right" onclick="removeDevice('{{ $selectedDevices->id }}')">Remove</button>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -129,6 +129,34 @@
             return response.json();
         })
         .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    function removeDevice(deviceId) {
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        console.log("Device ID to remove:", deviceId);
+
+        const formData = new FormData();
+        formData.append('id', deviceId);
+
+        fetch('/user/remove-user-device', {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            body: formData
+        })
+        .then(response => {
+            console.log('Response:', response);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
         .catch(error => console.error('Error:', error));
     }
 </script>
