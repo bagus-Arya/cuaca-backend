@@ -16,9 +16,9 @@ Route::middleware('auth:sanctum')->group(function () {
     // Device logs routes
     Route::get('user-devices/{userId}', [DeviceController::class, 'getUserDevices']);
     Route::get('device/history/{machineId}', [DeviceController::class, 'getHistoryByMachineId']);
-    Route::get('device/{id}/history/{userId}', [DeviceController::class, 'getHistoryByMachineId']);
+    // Route::get('device/{id}/history/{userId}', [DeviceController::class, 'getHistoryByMachineId']);
     Route::get('device/predict', [DeviceController::class, 'predictOneWeek']);
-    Route::get('device/exsmoth', [DeviceController::class, 'predictThreeDays']);
+    Route::get('device/exsmoth/{machineId}', [DeviceController::class, 'predictThreeDays']);
     Route::get('device/weather/evaluate', [DeviceController::class, 'evaluateWeatherConditions']);
     Route::get('device/weather/rainy', [DeviceController::class, 'showRainyConditions']);
     // Route::post('device/logs', [DeviceController::class, 'createLogs']);

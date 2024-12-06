@@ -76,9 +76,11 @@ class DeviceController extends Controller
         ], 200);
     }
 
-    public function predictThreeDays()
+    public function predictThreeDays(Request $request, $machineId)
     {
-        $data = DeviceLogs::orderBy('created_at', 'DESC')->take(10)->get();
+        $data = DeviceLogs::with(['device'])->where('machine_id', $machineId)->orderBy('created_at', 'DESC')->take(10)->get();
+
+        $latestData = $data->first();
 
         $suhuData = [];
         $kecepatanAnginData = [];
@@ -173,8 +175,11 @@ class DeviceController extends Controller
                 'condition' => $condition,
             ];
         }
-
-        return response()->json(['data' => $predictions]);
+    
+        return response()->json([
+            'latest' => $latestData,
+            'data' => $predictions
+        ],200);
     }
 
     public function predictOneWeek()
