@@ -25,11 +25,11 @@ class Device extends Model
 
     public function userDevices()
     {
-        return $this->hasMany(userDevices::class);
+        return $this->hasMany(userDevices::class, 'device_id');
     }
 
     public function deviceLogs()
     {
-        return $this->hasMany(DeviceLog::class);
+        return $this->hasMany(DeviceLogs::class, 'machine_id');
     }
 }

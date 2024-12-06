@@ -20,4 +20,9 @@ class UserDevices extends Model
     {
         return $this->belongsTo(Device::class, 'device_id');
     }
+
+    public function deviceLogs()
+    {
+        return $this->hasMany(DeviceLogs::class, 'machine_id');
+    }
 }

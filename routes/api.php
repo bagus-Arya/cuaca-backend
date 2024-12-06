@@ -14,8 +14,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     
     // Device logs routes
-    Route::get('user-devices/{userId}/{machineId}', [DeviceController::class, 'getUserDevices']);
-    Route::get('device/history', [DeviceController::class, 'getAllHistory']);
+    Route::get('user-devices/{userId}', [DeviceController::class, 'getUserDevices']);
+    Route::get('device/history/{machineId}', [DeviceController::class, 'getHistoryByMachineId']);
     Route::get('device/{id}/history/{userId}', [DeviceController::class, 'getHistoryByMachineId']);
     Route::get('device/predict', [DeviceController::class, 'predictOneWeek']);
     Route::get('device/exsmoth', [DeviceController::class, 'predictThreeDays']);

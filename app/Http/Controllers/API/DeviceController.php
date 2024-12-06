@@ -17,33 +17,63 @@ class DeviceController extends Controller
         return $logs;
     }
 
-    public function getHistoryByMachineId(Request $request, $id, $userId) {
-        $logs = UserDevices::with(['device','user'])
-                        ->where('device_id', $id)
-                        ->where('user_id', $userId)
+    public function getHistoryByMachineId(Request $request, $machineId) {
+        $logs = UserDevices::with(['device.deviceLogs'])
+                        ->where('device_id', $machineId)
                         ->orderBy('created_at', 'DESC')
                         ->paginate(10);
             
         return $logs;
     }
 
-    public function getUserDevices(Request $request, $userId, $machineId) {
-        $logs = UserDevices::with(['device','user'])
-                        ->where('device_id', $machineId)
-                        ->where('user_id', $userId)
-                        ->orderBy('created_at', 'DESC')
-                        ->first();
+    public function getUserDevices(Request $request, $userId) {
+        // Fetch user devices with related user and device information
+        $logs = UserDevices::with(['user', 'device.deviceLogs' => function($query) {
+            $query->orderBy('created_at', 'DESC'); 
+        }])
+        ->where('user_id', $userId)
+        ->orderBy('created_at', 'DESC')
+        ->get();
+    
+        // Check if logs are empty
+        if ($logs->isEmpty()) {
+            return response()->json([
+                'data' => [],
+            ], 200);
+        }
+
+        $timeThreshold = now()->subMinutes(2);
             
-                        if (!$logs) {
-                            return response()->json([
-                                'status' => 'offline',
-                            ], 200);
-                        }
-                        
-                        return response()->json([
-                            'status' => 'online',
-                            'data' => $logs
-                        ], 200);
+        // Map the logs to include the status and format the response
+        $formattedLogs = $logs->map(function ($log) use ($timeThreshold) {
+            
+            $latestLog = $log->device->deviceLogs->first();
+            $status = $latestLog->created_at >= $timeThreshold ? 'online' : 'offline';
+
+            return [
+                'status' => $status,
+                'id' => $log->id,
+                'device_id' => $log->device_id,
+                'user_id' => $log->user_id,
+                's' => $latestLog->created_at,
+                'b' => $timeThreshold,
+                'user' => [
+                    'id' => $log->user->id,
+                    'name' => $log->user->name,
+                    'email' => $log->user->email,
+                    'role' => $log->user->role,
+                ],
+                'device' => [
+                    'id' => $log->device->id,
+                    'place_name' => $log->device->place_name,
+                    'logs' => $latestLog,
+                ],
+            ];
+        });
+
+        return response()->json([
+            'data' => $formattedLogs
+        ], 200);
     }
 
     public function predictThreeDays()
