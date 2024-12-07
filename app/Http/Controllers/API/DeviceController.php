@@ -162,12 +162,12 @@ class DeviceController extends Controller
         // Condition predictions
         for ($i = 1; $i <= 3; $i++) {
             $date = now()->addDay($i)->toDateString();
-            if ($suhuPrediction[$i] < 23 && $kelembabanPrediction[$i] > 1013 && $kecepatanAnginPrediction[$i] > 10) {
-                $condition = 'Kondisi Cuaca Buruk'; 
-            } elseif ($suhuPrediction[$i] > 26 && $kelembabanPrediction[$i] < 93 && $kecepatanAnginPrediction[$i] < 10) {
-                $condition = 'Kondisi Cuaca Baik'; 
+            if ($tekananUdaraPrediction[$i] <= 990 && $kelembabanPrediction[$i] >= 90 && $kecepatanAnginPrediction[$i] >= 15) {
+                $condition = 'Cuaca Buruk'; 
+            } elseif ($tekananUdaraPrediction[$i] >= 990 && $kelembabanPrediction[$i] <= 89 && $kecepatanAnginPrediction[$i] <= 14) {
+                $condition = 'Cuaca Baik'; 
             } else {
-                $condition = 'Kondisi Tidak Diketahui'; 
+                $condition = 'Tidak Diketahui'; 
             }
 
             $predictions[] = [
@@ -304,10 +304,10 @@ class DeviceController extends Controller
         ]);
     }
 
-    public function showRainyConditions(Request $request) {
-        $logs = DeviceLogs::where('kelembaban', '>', 80) 
-            ->where('suhu', '<', 25)
-            ->where('kecepatan_angin', '<', 10)
+    public function showRainyConditions(Request $request, $machineId) {
+        $logs = DeviceLogs::where('machine_id', '=', $machineId)
+            ->where('kelembaban', '<=', 990) 
+            ->where('tekanan_udara', '>=', 80)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
     

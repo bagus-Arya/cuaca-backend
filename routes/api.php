@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('device/predict', [DeviceController::class, 'predictOneWeek']);
     Route::get('device/exsmoth/{machineId}', [DeviceController::class, 'predictThreeDays']);
     Route::get('device/weather/evaluate', [DeviceController::class, 'evaluateWeatherConditions']);
-    Route::get('device/weather/rainy', [DeviceController::class, 'showRainyConditions']);
+    Route::get('device/weather/rainy/{machineId}', [DeviceController::class, 'showRainyConditions']);
     // Route::post('device/logs', [DeviceController::class, 'createLogs']);
 });
