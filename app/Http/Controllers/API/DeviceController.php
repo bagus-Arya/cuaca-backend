@@ -17,6 +17,8 @@ class DeviceController extends Controller
         return $logs;
     }
 
+        
+    // get all data
     public function getHistoryByMachineId(Request $request, $machineId) {
         $logs = UserDevices::with(['device.deviceLogs'])
                         ->where('device_id', $machineId)
