@@ -28,7 +28,7 @@ class NTListGroupUserController extends Controller
             ->addColumn('action', function ($d) {
                 return 
                 '
-                <a href="'.route('show-edit-user', ["user" => $d -> id]).'" id='. $d -> id.'style="cursor:pointer;" class="btn btn-xs btn-outline-success viewKomponen">Device Saya <i class="fa fa-book"></i> </a>
+                <a href="'.route('nt-group-user-device', ["group" => $d -> id]).'" id='. $d -> id.'style="cursor:pointer;" class="btn btn-xs btn-outline-success viewKomponen">Device Saya <i class="fa fa-book"></i> </a>
                 <a href="'.route('show-edit-user', ["user" => $d -> id]).'" id='. $d -> id.'style="cursor:pointer;" class="btn btn-xs btn-outline-warning editKomponen">Edit <i class="fa fa-pencil"></i> </a>
                 <a href='.route('delete-user-data', ["user" => $d -> id]).' onclick="return confirm("Yakin ingin menghapus data?")" style="cursor:pointer;" id='.$d -> id.' class="btn btn-xs btn-outline-danger hapusKomponen">Hapus <i class="fa fa-trash"></i> </a>';
             })

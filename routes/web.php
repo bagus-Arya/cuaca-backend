@@ -32,7 +32,15 @@ use App\Http\Controllers\Navilatech\NTCreateUserGroupController;
 use App\Http\Controllers\Navilatech\NTShowAddGroupUserController;
 use App\Http\Controllers\Navilatech\NTListGroupUserController;
 use App\Http\Controllers\Navilatech\NTShowEditGroupController;
+use App\Http\Controllers\Navilatech\NTGroupUserDeviceController;
 use App\Http\Controllers\Navilatech\NTEditGroupController;
+use App\Http\Controllers\Navilatech\NTShowHostLogsController;
+use App\Http\Controllers\Navilatech\NTdtHostLogsController;
+use App\Http\Controllers\Navilatech\NTGUserDevicesController;
+use App\Http\Controllers\Navilatech\NTShowGUserDevicesController;
+use App\Http\Controllers\Navilatech\NTCreateExDevicesController;
+use App\Http\Controllers\Navilatech\NTShowExDevicesController;
+use App\Http\Controllers\Navilatech\NTShowCreateExDevicesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,24 +72,6 @@ Route::group(["prefix" => "user", "middleware" => ["auth"]], function() {
     Route::get('/delete-user-data/{user:id}', DeleteUserController::class) -> name('delete-user-data');
 });
 
-// navilatech
-Route::group(["prefix" => "nt", "middleware" => ["auth"]], function() {
-    Route::get("/", NTHomeController::class) -> name('nthome');
-    Route::get("/add/{group:id}", NTShowAddGroupUserController::class) -> name('nt-show-group-user');
-    Route::get("/nt-show-user", NTShowCreateGroupController::class) -> name('nt-show-store-user');
-    Route::get('/nt-user-data', NTShowGroupController::class) -> name('nt-user-data');
-    Route::post("/nt-store-user", NTCreateGroupController::class) -> name('nt-store-user');
-    Route::get('/nt-delete-user-data/{user:id}', DeleteUserController::class) -> name('nt-delete-user-data');
-
-    Route::get("/edit/{group:id}", NTShowEditGroupController::class) -> name('show-edit-group');
-    Route::put("/edit/{group}", NTEditGroupController::class) -> name('edit-group');
-
-    // group user
-    Route::get('/nt-group-data', NTListGroupUserController::class) -> name('nt-group-data');
-    Route::post("/nt-store-groups", NTCreateUserGroupController::class) -> name('nt-store-groups');
-
-});
-
 Route::group(["prefix" => "machine", "middleware" => ["auth"]], function() {
     Route::get("/", MachineController::class) -> name('machine');
     Route::get("/data-machine", ShowMachineController::class) -> name('data-machine');
@@ -101,4 +91,37 @@ Route::group(["prefix" => "sosmaps", "middleware" => ["auth"]], function() {
     Route::get("/", ShowSosMapsController::class) -> name('sos-maps');
 });
 
+// navilatech
+Route::group(["prefix" => "nt", "middleware" => ["auth"]], function() {
+    Route::get("/", NTHomeController::class) -> name('nthome');
+    Route::get("/add/{group:id}", NTShowAddGroupUserController::class) -> name('nt-show-group-user');
+    Route::get("/nt-show-user", NTShowCreateGroupController::class) -> name('nt-show-store-user');
+    Route::get('/nt-user-data', NTShowGroupController::class) -> name('nt-user-data');
+    Route::post("/nt-store-user", NTCreateGroupController::class) -> name('nt-store-user');
+    Route::get('/nt-delete-user-data/{user:id}', DeleteUserController::class) -> name('nt-delete-user-data');
 
+    Route::get("/edit/{group:id}", NTShowEditGroupController::class) -> name('show-edit-group');
+    Route::put("/edit/{group}", NTEditGroupController::class) -> name('edit-group');
+
+    // group user
+    Route::get('/nt-group-data', NTListGroupUserController::class) -> name('nt-group-data');
+    Route::post("/nt-store-groups", NTCreateUserGroupController::class) -> name('nt-store-groups');
+
+    // user group device
+    Route::get("/nt-group-user-device/{group:id}", NTGroupUserDeviceController::class) -> name('nt-group-user-device');
+    Route::post("/dt", NTGUserDevicesController::class) -> name('nt-devices');
+    Route::get("/dt-show", NTShowGUserDevicesController::class) -> name('nt-show-devices');
+});
+// navilatech
+Route::group(["prefix" => "dtm", "middleware" => ["auth"]], function() {
+    // show host machine logs
+    Route::get("/", NTShowHostLogsController::class) -> name('nt-machine-logs');
+    Route::get("/dt", NTdtHostLogsController::class) -> name('nt-dt-mlogs');
+});
+// navilatech 
+Route::group(["prefix" => "exdevice", "middleware" => ["auth"]], function() {
+    // show host machine logs
+    Route::get("/", NTShowCreateExDevicesController::class) -> name('nt-dvc');
+    Route::get("/dtexdvc", NTShowExDevicesController::class) -> name('nt-dtdvc');
+    Route::post("/exdvc", NTCreateExDevicesController::class) -> name('nt-ex-dvc');
+});

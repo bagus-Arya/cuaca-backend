@@ -98,10 +98,19 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                             <li class="nav-item">
-                                <a style="color: #fff;" href="{{ route('nthome') }}" class="nav-link {{ str_contains(Request::path(), 'kelompok') ? 'active' : '' }}">
+                                <a style="color: #fff;" href="{{ route('nthome') }}" class="nav-link {{ str_contains(Request::path(), 'nt') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Kelompok Nelayan
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="{{ route('nt-dvc') }}" class="nav-link {{ str_contains(Request::path(), 'exdevice') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Daftar Device
                                     </p>
                                 </a>
                             </li>
@@ -116,7 +125,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a style="color: #fff;" href="{{ route('home') }}" class="nav-link {{ str_contains(Request::path(), 'machine') ? 'active' : '' }}">
+                                <a style="color: #fff;" href="{{ route('nt-machine-logs') }}" class="nav-link {{ str_contains(Request::path(), 'dtm') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Machine Logs

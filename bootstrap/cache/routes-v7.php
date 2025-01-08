@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ee24RAuhhEJiUUi0',
+            '_route' => 'generated::X6mcNCmwkwjWQqSY',
           ),
           1 => NULL,
           2 => 
@@ -44,7 +44,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Fr8FdCCoHcQoCzo6',
+            '_route' => 'generated::0hylj6NARLCuku8n',
           ),
           1 => NULL,
           2 => 
@@ -63,7 +63,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::B4ptNUlv4zpqUVN8',
+            '_route' => 'generated::NQcsX9CXVPSe7KuS',
           ),
           1 => NULL,
           2 => 
@@ -82,7 +82,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::EkyRhhlRAYGtPutx',
+            '_route' => 'generated::xZWXmREMgLAm8l8C',
           ),
           1 => NULL,
           2 => 
@@ -101,7 +101,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::zhYb1XOVocXEsgZg',
+            '_route' => 'generated::1Do8tMnDkYKwFLdE',
           ),
           1 => NULL,
           2 => 
@@ -120,7 +120,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::j7c2tnDqLMONR3ZN',
+            '_route' => 'generated::DwJABqwoz6Nwjf0s',
           ),
           1 => NULL,
           2 => 
@@ -140,7 +140,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::PMmo7hm95ofOg3TQ',
+            '_route' => 'generated::0TeQ7Fp3Cu0cgFN2',
           ),
           1 => NULL,
           2 => 
@@ -154,13 +154,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/api/darurat/s/hhEtFEQWaA5GhCEJp47yzpVrP8GbU1' => 
+      '/api/machine/s/dI6Z1BuI9GnxvTULcA6sT1ugRsCbnE' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::iaUWy5h63TJygd1Z',
+            '_route' => 'generated::vQz8tMBFDKv9XpSv',
           ),
           1 => NULL,
           2 => 
@@ -173,13 +173,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/api/machine/s/dI6Z1BuI9GnxvTULcA6sT1ugRsCbnE' => 
+      '/api/darurat/s/hhEtFEQWaA5GhCEJp47yzpVrP8GbU1' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::cQRKw9y1x6z6FUuP',
+            '_route' => 'generated::b6GzQPdR0gOhi58O',
           ),
           1 => NULL,
           2 => 
@@ -198,7 +198,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Wbn1y97MxtX8PBXR',
+            '_route' => 'generated::HFpdJtQylNCWDmG9',
           ),
           1 => NULL,
           2 => 
@@ -217,7 +217,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::5nz9Dj3Z8P9GF72d',
+            '_route' => 'generated::DMd3GesrU1cr9Use',
           ),
           1 => NULL,
           2 => 
@@ -403,124 +403,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/nt' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nthome',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/nt/nt-show-user' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nt-show-store-user',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/nt/nt-user-data' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nt-user-data',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/nt/nt-store-user' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nt-store-user',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/nt/nt-group-data' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nt-group-data',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/nt/nt-store-groups' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nt-store-groups',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/machine' => 
       array (
         0 => 
@@ -657,10 +539,266 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/nt' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nthome',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/nt/nt-show-user' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-show-store-user',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/nt/nt-user-data' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-user-data',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/nt/nt-store-user' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-store-user',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/nt/nt-group-data' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-group-data',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/nt/nt-store-groups' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-store-groups',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/nt/dt' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-devices',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/nt/dt-show' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-show-devices',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/dtm' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-machine-logs',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/dtm/dt' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-dt-mlogs',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/exdevice' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-dvc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/exdevice/dtexdvc' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-dtdvc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/exdevice/exdvc' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-ex-dvc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/api/(?|user\\-devices/([^/]++)(*:37)|device/(?|history/([^/]++)(*:70)|exsmoth/([^/]++)(*:93)|weather/rainy/([^/]++)(*:122)))|/user/(?|edit/([^/]++)(?|(*:157))|delete\\-user\\-data/([^/]++)(*:193))|/nt/(?|add/([^/]++)(*:221)|nt\\-delete\\-user\\-data/([^/]++)(*:260)|edit/([^/]++)(?|(*:284)))|/machine/(?|delete/([^/]++)(*:321)|edit/([^/]++)(?|(*:345))))/?$}sDu',
+      0 => '{^(?|/api/(?|user\\-devices/([^/]++)(*:37)|device/(?|history/([^/]++)(*:70)|exsmoth/([^/]++)(*:93)|weather/rainy/([^/]++)(*:122)))|/user/(?|edit/([^/]++)(?|(*:157))|delete\\-user\\-data/([^/]++)(*:193))|/machine/(?|delete/([^/]++)(*:229)|edit/([^/]++)(?|(*:253)))|/nt/(?|add/([^/]++)(*:282)|nt\\-(?|delete\\-user\\-data/([^/]++)(*:324)|group\\-user\\-device/([^/]++)(*:360))|edit/([^/]++)(?|(*:385))))/?$}sDu',
     ),
     3 => 
     array (
@@ -670,7 +808,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::fmCvKNYVTNYKvF4A',
+            '_route' => 'generated::VgXpmSkWIctJSepB',
           ),
           1 => 
           array (
@@ -693,7 +831,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::YehSASk20CkoYNu3',
+            '_route' => 'generated::Ah17PGqDk6eZLnBi',
           ),
           1 => 
           array (
@@ -716,7 +854,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Hytt1thlF3RPk3CM',
+            '_route' => 'generated::JHA3u15nJMwhXtjh',
           ),
           1 => 
           array (
@@ -739,7 +877,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::TBs6luzkyMwwJ4yJ',
+            '_route' => 'generated::ynA8ZUDVZmKCRqpu',
           ),
           1 => 
           array (
@@ -821,95 +959,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      221 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nt-show-group-user',
-          ),
-          1 => 
-          array (
-            0 => 'group',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      260 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'nt-delete-user-data',
-          ),
-          1 => 
-          array (
-            0 => 'user',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      284 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'show-edit-group',
-          ),
-          1 => 
-          array (
-            0 => 'group',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'edit-group',
-          ),
-          1 => 
-          array (
-            0 => 'group',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      321 => 
+      229 => 
       array (
         0 => 
         array (
@@ -932,7 +982,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      345 => 
+      253 => 
       array (
         0 => 
         array (
@@ -973,6 +1023,117 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
+      ),
+      282 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-show-group-user',
+          ),
+          1 => 
+          array (
+            0 => 'group',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      324 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-delete-user-data',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      360 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nt-group-user-device',
+          ),
+          1 => 
+          array (
+            0 => 'group',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      385 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'show-edit-group',
+          ),
+          1 => 
+          array (
+            0 => 'group',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'edit-group',
+          ),
+          1 => 
+          array (
+            0 => 'group',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
         2 => 
         array (
           0 => NULL,
@@ -989,7 +1150,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::ee24RAuhhEJiUUi0' => 
+    'generated::X6mcNCmwkwjWQqSY' => 
     array (
       'methods' => 
       array (
@@ -1010,7 +1171,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::ee24RAuhhEJiUUi0',
+        'as' => 'generated::X6mcNCmwkwjWQqSY',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1026,7 +1187,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Fr8FdCCoHcQoCzo6' => 
+    'generated::0hylj6NARLCuku8n' => 
     array (
       'methods' => 
       array (
@@ -1046,7 +1207,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Fr8FdCCoHcQoCzo6',
+        'as' => 'generated::0hylj6NARLCuku8n',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1062,7 +1223,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::B4ptNUlv4zpqUVN8' => 
+    'generated::NQcsX9CXVPSe7KuS' => 
     array (
       'methods' => 
       array (
@@ -1082,7 +1243,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::B4ptNUlv4zpqUVN8',
+        'as' => 'generated::NQcsX9CXVPSe7KuS',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1098,7 +1259,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::EkyRhhlRAYGtPutx' => 
+    'generated::xZWXmREMgLAm8l8C' => 
     array (
       'methods' => 
       array (
@@ -1118,7 +1279,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::EkyRhhlRAYGtPutx',
+        'as' => 'generated::xZWXmREMgLAm8l8C',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1134,7 +1295,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::zhYb1XOVocXEsgZg' => 
+    'generated::1Do8tMnDkYKwFLdE' => 
     array (
       'methods' => 
       array (
@@ -1155,7 +1316,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::zhYb1XOVocXEsgZg',
+        'as' => 'generated::1Do8tMnDkYKwFLdE',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1171,7 +1332,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::fmCvKNYVTNYKvF4A' => 
+    'generated::VgXpmSkWIctJSepB' => 
     array (
       'methods' => 
       array (
@@ -1193,7 +1354,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::fmCvKNYVTNYKvF4A',
+        'as' => 'generated::VgXpmSkWIctJSepB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1209,7 +1370,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::YehSASk20CkoYNu3' => 
+    'generated::Ah17PGqDk6eZLnBi' => 
     array (
       'methods' => 
       array (
@@ -1231,7 +1392,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::YehSASk20CkoYNu3',
+        'as' => 'generated::Ah17PGqDk6eZLnBi',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1247,7 +1408,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::j7c2tnDqLMONR3ZN' => 
+    'generated::DwJABqwoz6Nwjf0s' => 
     array (
       'methods' => 
       array (
@@ -1269,7 +1430,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::j7c2tnDqLMONR3ZN',
+        'as' => 'generated::DwJABqwoz6Nwjf0s',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1285,7 +1446,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Hytt1thlF3RPk3CM' => 
+    'generated::JHA3u15nJMwhXtjh' => 
     array (
       'methods' => 
       array (
@@ -1307,7 +1468,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Hytt1thlF3RPk3CM',
+        'as' => 'generated::JHA3u15nJMwhXtjh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1323,7 +1484,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::PMmo7hm95ofOg3TQ' => 
+    'generated::0TeQ7Fp3Cu0cgFN2' => 
     array (
       'methods' => 
       array (
@@ -1345,7 +1506,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::PMmo7hm95ofOg3TQ',
+        'as' => 'generated::0TeQ7Fp3Cu0cgFN2',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1361,7 +1522,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::TBs6luzkyMwwJ4yJ' => 
+    'generated::ynA8ZUDVZmKCRqpu' => 
     array (
       'methods' => 
       array (
@@ -1383,7 +1544,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::TBs6luzkyMwwJ4yJ',
+        'as' => 'generated::ynA8ZUDVZmKCRqpu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1399,43 +1560,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::iaUWy5h63TJygd1Z' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'api/darurat/s/hhEtFEQWaA5GhCEJp47yzpVrP8GbU1',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\API\\SosMapsController@createSos',
-        'controller' => 'App\\Http\\Controllers\\API\\SosMapsController@createSos',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::iaUWy5h63TJygd1Z',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::cQRKw9y1x6z6FUuP' => 
+    'generated::vQz8tMBFDKv9XpSv' => 
     array (
       'methods' => 
       array (
@@ -1455,7 +1580,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::cQRKw9y1x6z6FUuP',
+        'as' => 'generated::vQz8tMBFDKv9XpSv',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1471,7 +1596,43 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Wbn1y97MxtX8PBXR' => 
+    'generated::b6GzQPdR0gOhi58O' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/darurat/s/hhEtFEQWaA5GhCEJp47yzpVrP8GbU1',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+        ),
+        'uses' => 'App\\Http\\Controllers\\API\\SosMapsController@createSos',
+        'controller' => 'App\\Http\\Controllers\\API\\SosMapsController@createSos',
+        'namespace' => NULL,
+        'prefix' => 'api',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::b6GzQPdR0gOhi58O',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::HFpdJtQylNCWDmG9' => 
     array (
       'methods' => 
       array (
@@ -1491,7 +1652,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Wbn1y97MxtX8PBXR',
+        'as' => 'generated::HFpdJtQylNCWDmG9',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1507,7 +1668,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::5nz9Dj3Z8P9GF72d' => 
+    'generated::DMd3GesrU1cr9Use' => 
     array (
       'methods' => 
       array (
@@ -1527,7 +1688,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::5nz9Dj3Z8P9GF72d',
+        'as' => 'generated::DMd3GesrU1cr9Use',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1994,6 +2155,387 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'machine' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'machine',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\MachineController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MachineController',
+        'namespace' => NULL,
+        'prefix' => '/machine',
+        'where' => 
+        array (
+        ),
+        'as' => 'machine',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'data-machine' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'machine/data-machine',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\ShowMachineController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\ShowMachineController',
+        'namespace' => NULL,
+        'prefix' => '/machine',
+        'where' => 
+        array (
+        ),
+        'as' => 'data-machine',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'show-store-machine' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'machine/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\ShowCreateMachineController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\ShowCreateMachineController',
+        'namespace' => NULL,
+        'prefix' => '/machine',
+        'where' => 
+        array (
+        ),
+        'as' => 'show-store-machine',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'delete-machine-data' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'machine/delete/{machine}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\DeleteMachineController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\DeleteMachineController',
+        'namespace' => NULL,
+        'prefix' => '/machine',
+        'where' => 
+        array (
+        ),
+        'as' => 'delete-machine-data',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+        'machine' => 'id',
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'show-edit-machine' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'machine/edit/{machine}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\ShowEditMachineController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\ShowEditMachineController',
+        'namespace' => NULL,
+        'prefix' => '/machine',
+        'where' => 
+        array (
+        ),
+        'as' => 'show-edit-machine',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+        'machine' => 'id',
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'edit-machine' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+      ),
+      'uri' => 'machine/edit/{machine}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\EditMachineController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\EditMachineController',
+        'namespace' => NULL,
+        'prefix' => '/machine',
+        'where' => 
+        array (
+        ),
+        'as' => 'edit-machine',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+        'machine' => 'id',
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'store-machine' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'machine/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\CreateMachineController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\CreateMachineController',
+        'namespace' => NULL,
+        'prefix' => '/machine',
+        'where' => 
+        array (
+        ),
+        'as' => 'store-machine',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'machine-logs' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'logs',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\MachineLogsController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\MachineLogsController',
+        'namespace' => NULL,
+        'prefix' => '/logs',
+        'where' => 
+        array (
+        ),
+        'as' => 'machine-logs',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'data-machine-logs' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'logs/data-machine-logs',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\ShowMachineLogsController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\ShowMachineLogsController',
+        'namespace' => NULL,
+        'prefix' => '/logs',
+        'where' => 
+        array (
+        ),
+        'as' => 'data-machine-logs',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'sos-maps' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'sosmaps',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\ShowSosMapsController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Admin\\ShowSosMapsController',
+        'namespace' => NULL,
+        'prefix' => '/sosmaps',
+        'where' => 
+        array (
+        ),
+        'as' => 'sos-maps',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'nthome' => 
     array (
       'methods' => 
@@ -2374,14 +2916,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'machine' => 
+    'nt-group-user-device' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'machine',
+      'uri' => 'nt/nt-group-user-device/{group}',
       'action' => 
       array (
         'middleware' => 
@@ -2389,14 +2931,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\MachineController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MachineController',
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTGroupUserDeviceController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTGroupUserDeviceController',
         'namespace' => NULL,
-        'prefix' => '/machine',
+        'prefix' => '/nt',
         'where' => 
         array (
         ),
-        'as' => 'machine',
+        'as' => 'nt-group-user-device',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2407,210 +2949,19 @@ app('router')->setCompiledRoutes(
       ),
       'bindingFields' => 
       array (
+        'group' => 'id',
       ),
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'data-machine' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'machine/data-machine',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ShowMachineController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ShowMachineController',
-        'namespace' => NULL,
-        'prefix' => '/machine',
-        'where' => 
-        array (
-        ),
-        'as' => 'data-machine',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'show-store-machine' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'machine/store',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ShowCreateMachineController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ShowCreateMachineController',
-        'namespace' => NULL,
-        'prefix' => '/machine',
-        'where' => 
-        array (
-        ),
-        'as' => 'show-store-machine',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'delete-machine-data' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'machine/delete/{machine}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\DeleteMachineController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\DeleteMachineController',
-        'namespace' => NULL,
-        'prefix' => '/machine',
-        'where' => 
-        array (
-        ),
-        'as' => 'delete-machine-data',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-        'machine' => 'id',
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'show-edit-machine' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'machine/edit/{machine}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ShowEditMachineController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ShowEditMachineController',
-        'namespace' => NULL,
-        'prefix' => '/machine',
-        'where' => 
-        array (
-        ),
-        'as' => 'show-edit-machine',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-        'machine' => 'id',
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'edit-machine' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-      ),
-      'uri' => 'machine/edit/{machine}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\EditMachineController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\EditMachineController',
-        'namespace' => NULL,
-        'prefix' => '/machine',
-        'where' => 
-        array (
-        ),
-        'as' => 'edit-machine',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-        'machine' => 'id',
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'store-machine' => 
+    'nt-devices' => 
     array (
       'methods' => 
       array (
         0 => 'POST',
       ),
-      'uri' => 'machine/store',
+      'uri' => 'nt/dt',
       'action' => 
       array (
         'middleware' => 
@@ -2618,14 +2969,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\CreateMachineController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\CreateMachineController',
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTGUserDevicesController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTGUserDevicesController',
         'namespace' => NULL,
-        'prefix' => '/machine',
+        'prefix' => '/nt',
         'where' => 
         array (
         ),
-        'as' => 'store-machine',
+        'as' => 'nt-devices',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2641,14 +2992,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'machine-logs' => 
+    'nt-show-devices' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'logs',
+      'uri' => 'nt/dt-show',
       'action' => 
       array (
         'middleware' => 
@@ -2656,14 +3007,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\MachineLogsController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\MachineLogsController',
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTShowGUserDevicesController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTShowGUserDevicesController',
         'namespace' => NULL,
-        'prefix' => '/logs',
+        'prefix' => '/nt',
         'where' => 
         array (
         ),
-        'as' => 'machine-logs',
+        'as' => 'nt-show-devices',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2679,14 +3030,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'data-machine-logs' => 
+    'nt-machine-logs' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'logs/data-machine-logs',
+      'uri' => 'dtm',
       'action' => 
       array (
         'middleware' => 
@@ -2694,14 +3045,14 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ShowMachineLogsController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ShowMachineLogsController',
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTShowHostLogsController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTShowHostLogsController',
         'namespace' => NULL,
-        'prefix' => '/logs',
+        'prefix' => '/dtm',
         'where' => 
         array (
         ),
-        'as' => 'data-machine-logs',
+        'as' => 'nt-machine-logs',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2717,14 +3068,14 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'sos-maps' => 
+    'nt-dt-mlogs' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'sosmaps',
+      'uri' => 'dtm/dt',
       'action' => 
       array (
         'middleware' => 
@@ -2732,14 +3083,127 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ShowSosMapsController@__invoke',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ShowSosMapsController',
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTdtHostLogsController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTdtHostLogsController',
         'namespace' => NULL,
-        'prefix' => '/sosmaps',
+        'prefix' => '/dtm',
         'where' => 
         array (
         ),
-        'as' => 'sos-maps',
+        'as' => 'nt-dt-mlogs',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nt-dvc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'exdevice',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTShowCreateExDevicesController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTShowCreateExDevicesController',
+        'namespace' => NULL,
+        'prefix' => '/exdevice',
+        'where' => 
+        array (
+        ),
+        'as' => 'nt-dvc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nt-dtdvc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'exdevice/dtexdvc',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTShowExDevicesController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTShowExDevicesController',
+        'namespace' => NULL,
+        'prefix' => '/exdevice',
+        'where' => 
+        array (
+        ),
+        'as' => 'nt-dtdvc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nt-ex-dvc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'exdevice/exdvc',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Navilatech\\NTCreateExDevicesController@__invoke',
+        'controller' => 'App\\Http\\Controllers\\Navilatech\\NTCreateExDevicesController',
+        'namespace' => NULL,
+        'prefix' => '/exdevice',
+        'where' => 
+        array (
+        ),
+        'as' => 'nt-ex-dvc',
       ),
       'fallback' => false,
       'defaults' => 
