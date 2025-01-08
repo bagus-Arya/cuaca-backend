@@ -10,7 +10,7 @@
         <div class="flex items-center py-7 px-8 pr-12 bg-white shadow-xl ring-1 w-5/12 rounded-lg">
             <div class="w-full">
 
-                <h2 class="text-3xl font-extrabold mb-3 text-gray-900">Login Odading</h2>
+                <h2 class="text-3xl font-extrabold mb-3 text-gray-900">Login</h2>
 
                 <form method="post" action="{{ route('login') }}">
                     @csrf

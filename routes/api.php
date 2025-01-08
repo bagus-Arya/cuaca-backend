@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\API\DeviceController;
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\SosMapsController;
+use App\Http\Controllers\API\NTMainController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/device/store/Jklame)923l!@kj2k3;Lk', [DeviceController::class, 'createLogs']);
+Route::post('/sos/store/UI8iqknk(@_28HJsdplkmaj2xcI@jasi', [SosMapsController::class, 'createSos']);
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
@@ -23,3 +26,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('device/weather/rainy/{machineId}', [DeviceController::class, 'showRainyConditions']);
     // Route::post('device/logs', [DeviceController::class, 'createLogs']);
 });
+
+// Navilatech Public routes
+Route::post('/machine/s/dI6Z1BuI9GnxvTULcA6sT1ugRsCbnE', [NTMainController::class, 'createMachine']);
+
+// Navilatech protected
+Route::post('/darurat/s/hhEtFEQWaA5GhCEJp47yzpVrP8GbU1', [SosMapsController::class, 'createSos']);
+Route::post('/device/s/AlKVNKvnZ2t6mq57KkkCEuXp2fFoTs', [NTMainController::class, 'createDarurat']);
+Route::post('/verify/WKJlaksAKJlMNBKoiqwueanmncoae', [NTMainController::class, 'verifyAccessToken']);

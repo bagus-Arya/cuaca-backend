@@ -17,7 +17,7 @@ class ShowUserController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $user = User::select('id', 'name', 'email') -> get();
+        $user = User::select('id', 'name', 'email', 'role') -> get();
         return DataTables::of($user)
             ->addIndexColumn()
             ->addColumn('action', function ($d) {

@@ -44,13 +44,14 @@
 
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <a href="index3.html" class="brand-link">
-                    <span class="brand-text font-weight-light">Sistem Monitoring</span>
+                    <span class="brand-text font-weight-light">EFISTRAC</span>
                 </a>
 
                 <div class="sidebar">
 
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                         
                             <li class="nav-item">
                                 <a style="color: #fff;" href="{{ route('home') }}" class="nav-link {{ str_contains(Request::path(), 'user') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -69,6 +70,53 @@
                             </li>
                             <li class="nav-item">
                                 <a style="color: #fff;" href="{{ route('machine-logs') }}" class="nav-link {{ str_contains(Request::path(), 'logs') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Machine Logs
+                                    </p>
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="#" class="nav-link {{ str_contains(Request::path(), 'sosmaps') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        SOS Maps
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <a href="index3.html" class="brand-link">
+                    <span class="brand-text font-weight-light">NAVILATECH</span>
+                </a>
+
+                <div class="sidebar">
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="{{ route('nthome') }}" class="nav-link {{ str_contains(Request::path(), 'kelompok') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Kelompok Nelayan
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="{{ route('home') }}" class="nav-link {{ str_contains(Request::path(), 'darurat') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Darurat
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="{{ route('home') }}" class="nav-link {{ str_contains(Request::path(), 'machine') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Machine Logs
