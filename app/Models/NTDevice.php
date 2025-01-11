@@ -20,6 +20,11 @@ class NTDevice extends Model
         return $this->belongsTo(NTExDevices::class,'host_id', 'id');
     }
 
+    public function sosLogs()
+    {
+        return $this->belongsTo(UserSosLog::class,'host_id', 'id');
+    }
+
     public function groupStaffFisherman()
     {
         return $this->belongsTo(NTGroupUsers::class, 'group_staff_fishermans_id');

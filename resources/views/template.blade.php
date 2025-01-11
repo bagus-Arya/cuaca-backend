@@ -116,7 +116,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a style="color: #fff;" href="{{ route('home') }}" class="nav-link {{ str_contains(Request::path(), 'darurat') ? 'active' : '' }}">
+                                <a style="color: #fff;" href="{{ route('showdata-darurat-logs') }}" class="nav-link {{ str_contains(Request::path(), 'sos') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>
                                         Darurat

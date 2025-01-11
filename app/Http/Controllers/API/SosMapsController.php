@@ -11,9 +11,9 @@ class SosMapsController extends Controller
 {
     public function createSos(Request $request) {
         $validate = Validator::make($request -> all(), [
-            "id" => "required",  
-            "lat" => "required", 
-            "lng" => "required"
+            "lat" => "required",  
+            "lng" => "required", 
+            "host_id" => "required"
         ]);
 
         if ($validate -> fails()) {
@@ -26,7 +26,7 @@ class SosMapsController extends Controller
         $data = [
             "lat" => $request -> lat, 
             "lng" => $request -> lng,
-            "user_id" => $request -> id
+            "host_id" => $request -> host_id
         ];
 
         UserSosLog::create($data);

@@ -17,14 +17,10 @@ class CreateNtSosLogs extends Migration
             $table->id();
             $table->string('lat');
             $table->string('lng');
-            $table->unsignedBigInteger('group_staff_fishermans_id');
             $table->unsignedBigInteger('host_id');
             $table->foreign('host_id')
             ->references('id')
-            ->on('nt_machine_logs');
-            $table->foreign('group_staff_fishermans_id')
-            ->references('id')
-            ->on('group_staff_fishermans');
+            ->on('nt_devices_list');
             $table->timestamps();
         });
     }

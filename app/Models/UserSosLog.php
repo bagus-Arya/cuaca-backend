@@ -9,9 +9,16 @@ class UserSosLog extends Model
 {
     use HasFactory;
 
+    protected $table = 'nt_sos_logs';
     protected $guarded = ['id'];
+    protected $fillable = [
+        'lat',
+        'lng',
+        'group_staff_fishermans_id',
+        'host_id'
+    ];
 
     public function users() {
-        return $this -> belongsTo(User::class, 'user_id');
+        return $this -> belongsTo(NTGroupUsers::class, 'group_fishermans_id');
     }
 }

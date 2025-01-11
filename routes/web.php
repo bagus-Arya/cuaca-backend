@@ -41,6 +41,9 @@ use App\Http\Controllers\Navilatech\NTShowGUserDevicesController;
 use App\Http\Controllers\Navilatech\NTCreateExDevicesController;
 use App\Http\Controllers\Navilatech\NTShowExDevicesController;
 use App\Http\Controllers\Navilatech\NTShowCreateExDevicesController;
+use App\Http\Controllers\Navilatech\NTSosMachineLogsController;
+use App\Http\Controllers\Navilatech\NTShowSosMachineLogsController;
+use App\Http\Controllers\Navilatech\NTSosDeviceLogsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -117,6 +120,13 @@ Route::group(["prefix" => "dtm", "middleware" => ["auth"]], function() {
     // show host machine logs
     Route::get("/", NTShowHostLogsController::class) -> name('nt-machine-logs');
     Route::get("/dt", NTdtHostLogsController::class) -> name('nt-dt-mlogs');
+});
+// navilatech
+Route::group(["prefix" => "sos", "middleware" => ["auth"]], function() {
+    // show sos machine logs
+    Route::get("/", NTShowSosMachineLogsController::class) -> name('showdata-darurat-logs');
+    Route::get("/dm", NTSosMachineLogsController::class) -> name('machine-darurat-logs');
+    Route::get("/dd", NTSosDeviceLogsController::class) -> name('device-darurat-logs');
 });
 // navilatech 
 Route::group(["prefix" => "exdevice", "middleware" => ["auth"]], function() {

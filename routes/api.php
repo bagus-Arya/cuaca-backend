@@ -27,10 +27,12 @@ Route::middleware('auth:sanctum')->group(function () {
     // Route::post('device/logs', [DeviceController::class, 'createLogs']);
 });
 
-// Navilatech Public routes
+// Navilatech Public routes machine
 Route::post('/machine/s/dI6Z1BuI9GnxvTULcA6sT1ugRsCbnE', [NTMainController::class, 'createMachine']);
+Route::post('/sm-pt/s/haGshEtFEQWaA5GhCEJp47yzpVrP8GbU1', [SosMapsController::class, 'createSos']);
 
 // Navilatech protected
-Route::post('/darurat/s/hhEtFEQWaA5GhCEJp47yzpVrP8GbU1', [SosMapsController::class, 'createSos']);
+Route::post('/dsm-pt/d/kjhi89KJo0iwkKjdiaqxmnKAoqwma', [SosMapsController::class, 'createSosDetail']);
+Route::post('/md/s/KJoikJNLjlakmnalOIEkalksjdKKnLKJek', [SosMapsController::class, 'createSosDevice']);
 Route::post('/device/s/AlKVNKvnZ2t6mq57KkkCEuXp2fFoTs', [NTMainController::class, 'createDarurat']);
 Route::post('/verify/WKJlaksAKJlMNBKoiqwueanmncoae', [NTMainController::class, 'verifyAccessToken']);
