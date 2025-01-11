@@ -10,30 +10,46 @@ use Illuminate\Support\Facades\Validator;
 class SosMapsController extends Controller
 {
     public function createSos(Request $request) {
-        $validate = Validator::make($request -> all(), [
-            "lat" => "required",  
-            "lng" => "required", 
+        // Get raw POST data and decode it
+        $rawData = json_decode(file_get_contents("php://input"), true);
+        
+        if (!$rawData) {
+            $rawData = $request->all();
+        }
+    
+        $validate = Validator::make($rawData, [
+            "lat" => "required|numeric",
+            "lng" => "required|numeric",
             "host_id" => "required"
         ]);
-
-        if ($validate -> fails()) {
+    
+        if ($validate->fails()) {
             return response([
-                "status" => 'false', 
-                "message" => $validate -> errors()
+                "success" => false,
+                "message" => "Validation failed",
+                "errors" => $validate->errors()
             ], 400);
         }
-
+    
         $data = [
-            "lat" => $request -> lat, 
-            "lng" => $request -> lng,
-            "host_id" => $request -> host_id
+            "lat" => $rawData['lat'],
+            "lng" => $rawData['lng'],
+            "host_id" => $rawData['host_id']
         ];
-
-        UserSosLog::create($data);
-
-        return response([
-            'status' => 'true', 
-            'message' => 'Data saved successfully'
-        ], 200);
-    }
+    
+        try {
+            UserSosLog::create($data);
+            
+            return response([
+                'success' => true,
+                'message' => 'SOS location saved successfully'
+            ], 200);
+        } catch (\Exception $e) {
+            return response([
+                'success' => false,
+                'message' => 'Failed to save SOS location',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }    
 }
