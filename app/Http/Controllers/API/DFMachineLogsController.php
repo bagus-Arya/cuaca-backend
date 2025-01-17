@@ -40,4 +40,13 @@ class DFMachineLogsController extends Controller
             'message' => 'Data saved successfully'
         ], 200);
     }
+
+    public function getSingleMachineLogs(Request $request) {
+        $data = DFMachineLogs::orderBy('created_at', 'DESC') -> get();
+        return response([
+            'status' => 'true',
+            'message' => 'Data retrieved successfully',
+            'data' => $data
+        ], 200);
+    }
 }

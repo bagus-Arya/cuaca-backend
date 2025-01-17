@@ -26,6 +26,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('device/weather/evaluate', [DeviceController::class, 'evaluateWeatherConditions']);
     Route::get('device/weather/rainy/{machineId}', [DeviceController::class, 'showRainyConditions']);
     // Route::post('device/logs', [DeviceController::class, 'createLogs']);
+
+    // Dryfitech routes
+    Route::get('dft/showal', [DFMachineLogsController::class, 'getSingleMachineLogs']);
 });
 
 // Navilatech Public routes machine
