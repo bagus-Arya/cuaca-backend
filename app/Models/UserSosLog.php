@@ -14,7 +14,6 @@ class UserSosLog extends Model
     protected $fillable = [
         'lat',
         'lng',
-        'group_staff_fishermans_id',
         'host_id'
     ];
 

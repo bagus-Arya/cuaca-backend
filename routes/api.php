@@ -4,6 +4,7 @@ use App\Http\Controllers\API\DeviceController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\SosMapsController;
 use App\Http\Controllers\API\NTMainController;
+use App\Http\Controllers\API\DFMachineLogsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +37,6 @@ Route::post('/dsm-pt/d/kjhi89KJo0iwkKjdiaqxmnKAoqwma', [SosMapsController::class
 Route::post('/md/s/KJoikJNLjlakmnalOIEkalksjdKKnLKJek', [SosMapsController::class, 'createSosDevice']);
 Route::post('/device/s/AlKVNKvnZ2t6mq57KkkCEuXp2fFoTs', [NTMainController::class, 'createDarurat']);
 Route::post('/verify/WKJlaksAKJlMNBKoiqwueanmncoae', [NTMainController::class, 'verifyAccessToken']);
+
+// Dryfitech Public routes machine
+Route::post('/df/tech/KuwLMNlIPSdklasideaiKhjKIewqpnxaoAWIoxc', [DFMachineLogsController::class, 'postLogs']);

@@ -89,6 +89,8 @@
                     </nav>
                 </div>
 
+                <!-- Navilatech -->
+
                 <a href="index3.html" class="brand-link">
                     <span class="brand-text font-weight-light">NAVILATECH</span>
                 </a>
@@ -135,6 +137,49 @@
                         </ul>
                     </nav>
                 </div>
+
+                <!-- Dryfitech -->
+
+                <a href="index3.html" class="brand-link">
+                    <span class="brand-text font-weight-light">DRYFITECH</span>
+                </a>
+
+                <div class="sidebar">
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                        <!--
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="{{ route('nthome') }}" class="nav-link {{ str_contains(Request::path(), 'nt') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Kelompok Nelayan
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="{{ route('nt-dvc') }}" class="nav-link {{ str_contains(Request::path(), 'exdevice') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Daftar Device
+                                    </p>
+                                </a>
+                            </li>
+                        -->
+
+                            <li class="nav-item">
+                                <a style="color: #fff;" href="{{ route('show-dftmachine') }}" class="nav-link {{ str_contains(Request::path(), 'dftmachine') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Machine Logs
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
             </aside>
 
             <div class="content-wrapper mt-3">

@@ -25,7 +25,7 @@ class NTShowGUserDevicesController extends Controller
         ->orderBy('created_at', 'DESC') -> get();
         return DataTables::of($user)
             ->addIndexColumn()
-            ->addColumn('machine_log', function ($d) {
+            ->addColumn('n', function ($d) {
                 return $d->machineLog ? $d->machineLog->host_id : '-';
             })
             ->addColumn('action', function ($d) {

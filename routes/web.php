@@ -44,6 +44,8 @@ use App\Http\Controllers\Navilatech\NTShowCreateExDevicesController;
 use App\Http\Controllers\Navilatech\NTSosMachineLogsController;
 use App\Http\Controllers\Navilatech\NTShowSosMachineLogsController;
 use App\Http\Controllers\Navilatech\NTSosDeviceLogsController;
+use App\Http\Controllers\DryFitech\ShowDftMachineController;
+use App\Http\Controllers\DryFitech\GetDftMachineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -134,4 +136,11 @@ Route::group(["prefix" => "exdevice", "middleware" => ["auth"]], function() {
     Route::get("/", NTShowCreateExDevicesController::class) -> name('nt-dvc');
     Route::get("/dtexdvc", NTShowExDevicesController::class) -> name('nt-dtdvc');
     Route::post("/exdvc", NTCreateExDevicesController::class) -> name('nt-ex-dvc');
+});
+
+// dryfitech 
+Route::group(["prefix" => "dftmachine", "middleware" => ["auth"]], function() {
+    // show machine logs
+    Route::get("/", ShowDftMachineController::class) -> name('show-dftmachine');
+    Route::get("/get-dftmachine", GetDftMachineController::class) -> name('get-dftmachine');
 });
