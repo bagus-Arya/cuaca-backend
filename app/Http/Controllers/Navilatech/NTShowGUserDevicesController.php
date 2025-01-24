@@ -26,6 +26,7 @@ class NTShowGUserDevicesController extends Controller
         return DataTables::of($user)
             ->addIndexColumn()
             ->addColumn('n', function ($d) {
+                // host_id in nt_device_list
                 return $d->machineLog ? $d->machineLog->host_id : '-';
             })
             ->addColumn('action', function ($d) {

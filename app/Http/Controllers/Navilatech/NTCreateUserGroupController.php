@@ -16,24 +16,24 @@ class NTCreateUserGroupController extends Controller
      */
     public function __invoke(Request $request)
     {
-        // dd($request);
-        $validate = $request -> validate([
-            "staff_nm" => "required",
-            "email" => "required",
-            "addr" => "required",
-            "no_hp" => "required",
-            "role" => "required",
-            "password" => "required",
-            "group_fishermans_id" => "required",
+        // Validate the incoming request
+        $validate = $request->validate([
+            "staff_nm" => "required|string|max:255",
+            "email" => "required|email|unique:group_staff_fishermans,email",
+            "addr" => "required|string|max:255",
+            "no_hp" => "required|string|max:15", 
+            "role" => "required|string|max:50", 
+            "password" => "required", 
+            "group_fishermans_id" => "required|integer", 
         ]);
         
         $validate["password"] = bcrypt($validate["password"]);
+        
         NTGroupUsers::create($validate);
-
+    
         return redirect()
             ->route('nthome')
-            ->with('successMessage', 'Berhasil manambah data group');
-    
+            ->with('successMessage', 'Berhasil menambah data group');
     }
 
     private function generateRandomString($length = 32) {

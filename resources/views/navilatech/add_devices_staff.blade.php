@@ -72,8 +72,8 @@
                         name: 'DT_RowIndex',
                     },
                     {
-                        data: 'machine_log',
-                        name: 'machine_log'
+                        data: 'n',
+                        name: 'n'
                     },
                     {
                         data: 'action',

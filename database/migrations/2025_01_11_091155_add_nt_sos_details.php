@@ -13,6 +13,7 @@ class AddNtSosDetails extends Migration
      */
     public function up()
     {
+        // sos button from handphone
         Schema::create('add_nt_sos_details', function (Blueprint $table) {
             $table->id();
             $table->string('lat');

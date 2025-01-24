@@ -20,4 +20,8 @@ class UserSosLog extends Model
     public function users() {
         return $this -> belongsTo(NTGroupUsers::class, 'group_fishermans_id');
     }
+
+    public function device()  {
+        return $this -> belongsTo(NTExDevices::class,'host_id');
+    }
 }

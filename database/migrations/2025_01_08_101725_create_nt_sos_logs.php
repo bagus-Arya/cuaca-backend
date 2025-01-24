@@ -13,6 +13,7 @@ class CreateNtSosLogs extends Migration
      */
     public function up()
     {
+        // sos button from arduino
         Schema::create('nt_sos_logs', function (Blueprint $table) {
             $table->id();
             $table->string('lat');

@@ -53,35 +53,6 @@ class NTMainController extends Controller
             'user' => $user
         ], 200);
     }
-    public function createDarurat(Request $request) {
-        $validate = Validator::make($request -> all(), [
-            "lat" => "required", 
-            "lng" => "required",
-            "group_staff_fishermans_id" => "required", 
-            "host_id" => "required"
-        ]);
-
-        if ($validate -> fails()) {
-            return response([
-                "status" => 'false', 
-                "message" => $validate -> errors()
-            ], 400);
-        }
-
-        $data = [
-            "lat" => $request -> lat, 
-            "lng" => $request -> lng,
-            "group_staff_fishermans_id" => $request -> group_staff_fishermans_id,
-            "group_staff_fishermans_id" => $request -> host_id
-        ];
-
-        UserSosLog::create($data);
-
-        return response([
-            'status' => 'true', 
-            'message' => 'Data saved successfully'
-        ], 200);
-    }
 
     public function createMachine(Request $request) {
         $validate = Validator::make($request -> all(), [
@@ -114,6 +85,43 @@ class NTMainController extends Controller
         return response([
             'status' => 'true', 
             'message' => 'Data saved successfully'
+        ], 200);
+    }
+
+    public function getGroupData(Request $request)
+    {
+        $staffId = $request->user()->id;
+        
+        $staffData = NTGroupStaffFisherman::with(['group', 'devices'])
+            ->where('id', $staffId)
+            ->first();
+
+        if (!$staffData) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Staff data not found'
+            ], 404);
+        }
+
+        $response = [
+            'staff_id' => $staffData->id,
+            'staff_name' => $staffData->name,
+            'group' => [
+                'id' => $staffData->group->id,
+                'name' => $staffData->group->name
+            ],
+            'devices' => $staffData->devices->map(function($device) {
+                return [
+                    'device_id' => $device->id,
+                    'host_id' => $device->host_id,
+                    'status' => $device->status
+                ];
+            })
+        ];
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $response
         ], 200);
     }
 }

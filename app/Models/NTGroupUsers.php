@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable; 
+use Laravel\Sanctum\HasApiTokens;
 
-class NTGroupUsers extends Model
+class NTGroupUsers extends Authenticatable 
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens; 
 
     protected $table = 'group_staff_fishermans';
     protected $guarded = ['id'];
@@ -21,9 +22,17 @@ class NTGroupUsers extends Model
         'group_fishermans_id',
     ];
 
-    public function groupUsers()
+    // Hash the password when setting it
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+    // Hide the password attribute when converting to array or JSON
+    protected $hidden = ['password'];
+
+    public function group()
     {
         return $this->belongsTo(NTGroup::class, 'group_fishermans_id');
     }
-
 }

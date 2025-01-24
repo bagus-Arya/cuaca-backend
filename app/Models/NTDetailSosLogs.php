@@ -16,4 +16,9 @@ class NTDetailSosLogs extends Model
         'lng',
         'group_staff_fishermans_id',
     ];
+
+    public function groupUser ()
+    {
+        return $this->belongsTo(NTGroupUsers::class, 'group_staff_fishermans_id');
+    }
 }

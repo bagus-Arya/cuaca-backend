@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 // Public routes
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/device/store/Jklame)923l!@kj2k3;Lk', [DeviceController::class, 'createLogs']);
-Route::post('/sos/store/UI8iqknk(@_28HJsdplkmaj2xcI@jasi', [SosMapsController::class, 'createSos']);
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
@@ -26,14 +25,25 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('device/weather/evaluate', [DeviceController::class, 'evaluateWeatherConditions']);
     Route::get('device/weather/rainy/{machineId}', [DeviceController::class, 'showRainyConditions']);
     // Route::post('device/logs', [DeviceController::class, 'createLogs']);
-
+    
     // Dryfitech routes
     Route::get('dft/showal', [DFMachineLogsController::class, 'getSingleMachineLogs']);
+    
+    // Navilatech routes
+    // user sos post from device 
+    Route::post('/sos/store/Naksjcoiqwekllsdjpkjuepclaol/{userId}', [SosMapsController::class, 'createUserSos']);
+    // user sos logs from device 
+    Route::get('/sos/show/UI8iqknk28HJsdplkmaj2xcIfsjasi', [SosMapsController::class, 'getAllSosLogs']);
+    // user sos logs from device 
+    Route::get('/sos/show/Iaisjoiwoe8ojdkiaposudcjqwAIo0wj', [SosMapsController::class, 'getAllSosMachine']);
 });
 
 // Navilatech Public routes machine
+// detail logs from arduino 
 Route::post('/machine/s/dI6Z1BuI9GnxvTULcA6sT1ugRsCbnE', [NTMainController::class, 'createMachine']);
+// sos logs from arduino
 Route::post('/sm-pt/s/haGshEtFEQWaA5GhCEJp47yzpVrP8GbU1', [SosMapsController::class, 'createSos']);
+
 
 // Navilatech protected
 Route::post('/dsm-pt/d/kjhi89KJo0iwkKjdiaqxmnKAoqwma', [SosMapsController::class, 'createSosDetail']);

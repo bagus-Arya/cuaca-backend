@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\UserSosLog;
+use App\Models\NTDetailSosLogs;
 use Illuminate\Support\Facades\Validator;
 
 class SosMapsController extends Controller
@@ -52,4 +53,68 @@ class SosMapsController extends Controller
             ], 500);
         }
     }    
+    public function createUserSos(Request $request, $userId) 
+    {
+        $validate = Validator::make($request->all(), [
+            "lat" => "required|numeric", 
+            "lng" => "required|numeric", 
+            "group_staff_fishermans_id" => "required"
+        ]);
+    
+        if ($validate->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => $validate->errors()
+            ], 400);
+        }
+    
+        $data = [
+            "lat" => $request->lat, 
+            "lng" => $request->lng,
+            "group_staff_fishermans_id" => $userId,
+        ];
+    
+        NTDetailSosLogs::create($data);
+    
+        return response()->json([
+            'status' => true, 
+            'message' => 'Data saved successfully'
+        ], 200);
+    }  
+    public function getAllSosLogs(Request $request) {
+        $data = NTDetailSosLogs::with('groupUser')->get();
+    
+        $transformedData = $data->map(function ($log) {
+            return [
+                'lat' => $log->lat,
+                'lng' => $log->lng,
+                'group_staff_fishermans_id' => $log->group_staff_fishermans_id,
+                'staff_nm' => $log->groupUser ? $log->groupUser->staff_nm : null,
+            ];
+        });
+    
+        return response([
+            'success' => true,
+            'message' => 'Data retrieved successfully',
+            'data' => $transformedData
+        ], 200);
+    }
+    public function getAllSosMachine(Request $request) {
+        $data = UserSosLog::with('device')->get();
+    
+        $transformedData = $data->map(function ($log) {
+            return [
+                'lat' => $log->lat,
+                'lng' => $log->lng,
+                'host_id' => $log->device ? $log->device->id : null,
+                'machine_name' => $log->device ? $log->device->host_id : null,
+            ];
+        });
+    
+        return response([
+            'success' => true,
+            'message' => 'Data retrieved successfully',
+            'data' => $transformedData
+        ], 200);
+    }  
 }
