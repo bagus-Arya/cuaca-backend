@@ -20,7 +20,7 @@ class NTListGroupUserController extends Controller
         $id = $request->get('id');
 
         $user = NTGroupUsers::select('id', 'staff_nm', 'email', 'addr', 'no_hp', 'role') 
-        ->with(['groupUsers'])
+        ->with(['group'])
         ->where('group_fishermans_id', $id)
         ->orderBy('created_at', 'DESC') -> get();
         return DataTables::of($user)
