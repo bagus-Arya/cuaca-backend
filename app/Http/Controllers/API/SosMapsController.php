@@ -82,7 +82,7 @@ class SosMapsController extends Controller
         ], 200);
     }  
     public function getAllSosLogs(Request $request) {
-        $data = NTDetailSosLogs::with('groupUser ')
+        $data = NTDetailSosLogs::with('groupUser')
         ->orderBy('created_at', 'desc') 
         ->get();
 
