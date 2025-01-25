@@ -17,9 +17,12 @@ class NTSosDeviceLogsController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $logs = NTDetailSosLogs::select('group_staff_fishermans_id','lat', 'lng') -> get();
+        $logs = NTDetailSosLogs::select('group_staff_fishermans_id','lat', 'lng')
+        ->orderBy('created_at', 'desc') 
+        ->get();
+        
         return DataTables::of($logs)
-                ->addIndexColumn()
-                ->make(true);
+            ->addIndexColumn() 
+            ->make(true);
     }
 }

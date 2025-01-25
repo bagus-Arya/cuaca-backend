@@ -82,17 +82,19 @@ class SosMapsController extends Controller
         ], 200);
     }  
     public function getAllSosLogs(Request $request) {
-        $data = NTDetailSosLogs::with('groupUser')->get();
-    
+        $data = NTDetailSosLogs::with('groupUser ')
+        ->orderBy('created_at', 'desc') 
+        ->get();
+
         $transformedData = $data->map(function ($log) {
             return [
                 'lat' => $log->lat,
                 'lng' => $log->lng,
                 'group_staff_fishermans_id' => $log->group_staff_fishermans_id,
-                'staff_nm' => $log->groupUser ? $log->groupUser->staff_nm : null,
+                'staff_nm' => $log->groupUser  ? $log->groupUser ->staff_nm : null,
             ];
         });
-    
+        
         return response([
             'success' => true,
             'message' => 'Data retrieved successfully',
@@ -100,7 +102,9 @@ class SosMapsController extends Controller
         ], 200);
     }
     public function getAllSosMachine(Request $request) {
-        $data = UserSosLog::with('device')->get();
+        $data = UserSosLog::with('device')
+        ->orderBy('created_at', 'desc') 
+        ->get();
     
         $transformedData = $data->map(function ($log) {
             return [
@@ -110,11 +114,12 @@ class SosMapsController extends Controller
                 'machine_name' => $log->device ? $log->device->host_id : null,
             ];
         });
-    
+        
         return response([
             'success' => true,
             'message' => 'Data retrieved successfully',
             'data' => $transformedData
         ], 200);
+
     }  
 }
