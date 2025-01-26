@@ -55,7 +55,8 @@ class NTMainController extends Controller
     }
 
     public function createMachine(Request $request) {
-        $validate = Validator::make($request -> all(), [
+
+        $validate = Validator::make($request->all(), [
             "host_id" => "required", 
             "lat" => "required", 
             "lng" => "required",
@@ -64,28 +65,37 @@ class NTMainController extends Controller
             "pressure" => "required"
         ]);
 
-        if ($validate -> fails()) {
+        if ($validate->fails()) {
             return response([
                 "status" => 'false', 
-                "message" => $validate -> errors()
+                "message" => $validate->errors()
             ], 400);
         }
-
+    
         $data = [
-            "host_id" => $request -> host_id,
-            "lat" => $request -> lat, 
-            "lng" => $request -> lng,
-            "temp" => $request -> temp, 
-            "humidity" => $request -> humidity,
-            "pressure" => $request -> pressure
+            "lat" => $request->lat, 
+            "lng" => $request->lng,
+            "temp" => $request->temp, 
+            "humidity" => $request->humidity,
+            "pressure" => $request->pressure
         ];
-
-        NTMachine::create($data);
-
-        return response([
-            'status' => 'true', 
-            'message' => 'Data saved successfully'
-        ], 200);
+    
+        $machine = NTMachine::where('host_id', $request->host_id)->first();
+    
+        if ($machine) {
+            $machine->update($data);
+            return response([
+                'status' => 'true', 
+                'message' => 'Data updated successfully'
+            ], 200);
+        } else {
+            $data['host_id'] = $request->host_id;
+            NTMachine::create($data);
+            return response([
+                'status' => 'true', 
+                'message' => 'Data saved successfully'
+            ], 200);
+        }
     }
 
     public function getGroupData(Request $request)
