@@ -134,4 +134,20 @@ class NTMainController extends Controller
             'data' => $response
         ], 200);
     }
+
+    public function getAllMachines() {
+        $machines = NTMachine::all();
+
+        if ($machines->isEmpty()) {
+            return response([
+                'status' => 'false',
+                'message' => 'No data found'
+            ], 404);
+        }
+
+        return response([
+            'status' => 'true',
+            'data' => $machines
+        ], 200);
+    }
 }

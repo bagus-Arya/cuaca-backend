@@ -36,6 +36,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/sos/show/UI8iqknk28HJsdplkmaj2xcIfsjasi', [SosMapsController::class, 'getAllSosLogs']);
     // user sos logs from device 
     Route::get('/sos/show/Iaisjoiwoe8ojdkiaposudcjqwAIo0wj', [SosMapsController::class, 'getAllSosMachine']);
+    // get all machine logs 
+    Route::get('/get/machines/kaoicKJilKDiaqwoMCMwonxqKXoiqwqxigyrtBHG', [NTMainController::class, 'getAllMachines']);
 });
 
 // Navilatech Public routes machine
