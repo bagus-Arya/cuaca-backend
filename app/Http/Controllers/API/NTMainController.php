@@ -56,45 +56,57 @@ class NTMainController extends Controller
 
     public function createMachine(Request $request) {
 
-        $validate = Validator::make($request->all(), [
-            "host_id" => "required", 
-            "lat" => "required", 
+        $rawData = json_decode(file_get_contents("php://input"), true);
+
+        if (!$rawData) {
+            $rawData = $request->all();
+        }
+        $validate = Validator::make($rawData, [
+            "host_id" => "required",
+            "lat" => "required",
             "lng" => "required",
             "temp" => "required",
-            "humidity" => "required", 
+            "humidity" => "required",
             "pressure" => "required"
         ]);
-
         if ($validate->fails()) {
             return response([
-                "status" => 'false', 
+                "status" => 'false',
                 "message" => $validate->errors()
             ], 400);
         }
-    
+
         $data = [
-            "lat" => $request->lat, 
-            "lng" => $request->lng,
-            "temp" => $request->temp, 
-            "humidity" => $request->humidity,
-            "pressure" => $request->pressure
+            "lat" => $rawData['lat'],
+            "lng" => $rawData['lng'],
+            "temp" => $rawData['temp'],
+            "humidity" => $rawData['humidity'],
+            "pressure" => $rawData['pressure']
         ];
+
+        try {
+            $machine = NTMachine::where('host_id', $request->host_id)->first();
     
-        $machine = NTMachine::where('host_id', $request->host_id)->first();
-    
-        if ($machine) {
-            $machine->update($data);
+            if ($machine) {
+                $machine->update($data);
+                return response([
+                    'status' => 'true', 
+                    'message' => 'Data updated successfully'
+                ], 200);
+            } else {
+                $data['host_id'] = $request->host_id;
+                NTMachine::create($data);
+                return response([
+                    'status' => 'true', 
+                    'message' => 'Data saved successfully'
+                ], 200);
+            }
+        } catch (\Exception $e) {
             return response([
-                'status' => 'true', 
-                'message' => 'Data updated successfully'
-            ], 200);
-        } else {
-            $data['host_id'] = $request->host_id;
-            NTMachine::create($data);
-            return response([
-                'status' => 'true', 
-                'message' => 'Data saved successfully'
-            ], 200);
+                'success' => false,
+                'message' => 'Failed to save Data',
+                'error' => $e->getMessage()
+            ], 500);
         }
     }
 

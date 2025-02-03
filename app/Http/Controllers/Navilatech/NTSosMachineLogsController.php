@@ -18,7 +18,7 @@ class NTSosMachineLogsController extends Controller
     public function __invoke(Request $request)
     {
         $logs = UserSosLog::select('host_id', 'lat', 'lng', 'created_at')
-        ->orderBy('created_at', 'desc') 
+        ->orderBy('created_at', 'asc') 
         ->get();
     
     return DataTables::of($logs)

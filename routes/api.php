@@ -41,7 +41,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 // Navilatech Public routes machine
-// detail logs from arduino 
+// post logs from arduino 
 Route::post('/machine/s/dI6Z1BuI9GnxvTULcA6sT1ugRsCbnE', [NTMainController::class, 'createMachine']);
 // sos logs from arduino
 Route::post('/sm-pt/s/haGshEtFEQWaA5GhCEJp47yzpVrP8GbU1', [SosMapsController::class, 'createSos']);
