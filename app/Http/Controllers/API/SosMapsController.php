@@ -83,7 +83,7 @@ class SosMapsController extends Controller
     }  
     public function getAllSosLogs(Request $request) {
         $data = NTDetailSosLogs::with('groupUser')
-        ->orderBy('created_at', 'desc') 
+        ->orderBy('created_at', 'asc') 
         ->get();
 
         $transformedData = $data->map(function ($log) {
@@ -103,7 +103,7 @@ class SosMapsController extends Controller
     }
     public function getAllSosMachine(Request $request) {
         $data = UserSosLog::with('device')
-        ->orderBy('created_at', 'desc') 
+        ->orderBy('created_at', 'asc') 
         ->get();
     
         $transformedData = $data->map(function ($log) {
