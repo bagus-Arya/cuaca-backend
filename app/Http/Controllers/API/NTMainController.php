@@ -77,6 +77,7 @@ class NTMainController extends Controller
         }
 
         $data = [
+            "host_id" => $rawData['host_id'],
             "lat" => $rawData['lat'],
             "lng" => $rawData['lng'],
             "temp" => $rawData['temp'],
