@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\UserSosLog;
 use App\Models\NTDetailSosLogs;
+use App\Models\NTMachine;
 use Illuminate\Support\Facades\Validator;
 
 class SosMapsController extends Controller
@@ -37,10 +38,29 @@ class SosMapsController extends Controller
             "lng" => $rawData['lng'],
             "host_id" => $rawData['host_id']
         ];
-    
+
+        $machineData = [
+            "host_id" => $rawData['host_id'],
+            "lat" => $rawData['lat'],
+            "lng" => $rawData['lng'],
+            "temp" => 27,
+            "humidity" => 88,
+            "pressure" => 1100
+        ];
+ 
         try {
             UserSosLog::create($data);
             
+            // Handle NTMachine
+            $machine = NTMachine::where('host_id', $machineData['host_id'])->first();
+
+            if ($machine) {
+                // Update the existing machine record
+                $machine->update($machineData);
+            } else {
+                // Create a new machine record
+                NTMachine::create($machineData);
+            }
             return response([
                 'success' => true,
                 'message' => 'SOS location saved successfully'
